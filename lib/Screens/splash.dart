@@ -26,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
   }
   _navigateToLogin(){
-    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
   }
   @override
   void initState() {
