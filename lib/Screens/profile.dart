@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:school_diary2022/Widgets/bottomNavBar.dart';
 import '../Widgets/sideBar.dart';
 import '../Widgets/customAppbar.dart';
 
@@ -21,6 +22,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
       key: _key,
       appBar: CustomAppBar(name: true,title: 'Home',appHeight: 200,centreText: false,globalKey: _key),
       drawer: SideBar(),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

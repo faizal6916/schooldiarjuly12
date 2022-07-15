@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school_diary2022/Screens/about.dart';
+import 'package:school_diary2022/Screens/downloads.dart';
+import 'package:school_diary2022/Screens/my_profile.dart';
+import 'package:school_diary2022/Screens/profile.dart';
+import 'package:school_diary2022/Screens/report.dart';
 import './Screens/splash.dart';
 
 void main() {
@@ -32,7 +37,16 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           textTheme: Typography.englishLike2018.apply(fontSizeFactor: 1.sp)
         ),
-        home: SplashScreen(),
+        //home: SplashScreen(),
+        initialRoute: '/',
+        routes: {
+          '/': (context) => SplashScreen(),
+          '/home': (context) => ProfileScreen(),
+          '/about': (context) => AboutSceen(),
+          '/downloads': (context) => DownloadScreen(),
+          '/myprofile': (context) => MyProfileScreen(),
+          '/report': (context) => ReportScreen()
+        },
       )
     );
   }
