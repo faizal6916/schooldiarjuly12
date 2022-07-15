@@ -30,9 +30,9 @@ class _LoginScreenState extends State<LoginScreen> {
             //     top: 0,
             //     child: Lottie.asset('assets/animation/Login.json')),
             Container(
-              margin: EdgeInsets.only(top: 0.25.sh),
+              margin: EdgeInsets.only(top: 0.3.sh),
               width: 1.sw,
-              height: 0.75.sh,
+              height: 0.7.sh,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(25), topLeft: Radius.circular(25)),
@@ -40,18 +40,18 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 0.05.sh,
+                    height: 0.03.sh,
                   ),
                   Text(
                     'Please login with registered email id',
                     style: TextStyle(fontSize: 12.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400),
                   ),
                   SizedBox(
-                    height: 0.03.sh,
+                    height: 0.02.sh,
                   ),
                   Container(
                     width: 278,
-                    height: 65,
+                    height: 0.08.sh,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
                         border: Border.all(color: Color(0xff518EF8))),
@@ -73,61 +73,67 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   Text('or',style: TextStyle(fontSize: 12.sp,fontFamily: 'Axiforma',fontWeight: FontWeight.w400,color: Color(0xff8A8CBD)),),
                   SizedBox(
-                    height: 0.02.sh,
+                    height: 0.005.sh,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, right: 50),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.people,
-                          color: Color(0xffD2C2FF),
+                  SizedBox(
+                    height: 0.1.sh,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 50, right: 50),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.people,
+                            color: Color(0xffD2C2FF),
+                          ),
+                          helperText: ' ',
+                          labelText: 'Email or Mobile Number',
+                          labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFFD2C2FF)),
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFF7D22E1)),
+                          ),
                         ),
-                        helperText: ' ',
-                        labelText: 'Email or Mobile Number',
-                        labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFD2C2FF)),
-                        ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF7D22E1)),
-                        ),
+                        style: TextStyle(fontFamily: 'Axiforma',fontWeight: FontWeight.w400,fontSize: 12.sp),
                       ),
-                      style: TextStyle(fontFamily: 'Axiforma',fontWeight: FontWeight.w400,fontSize: 12.sp),
                     ),
                   ),
                   SizedBox(
-                    height: 0.001.sh,
+                    height: 0.0005.sh,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 50, right: 50),
-                    child: TextField(
-                      decoration: InputDecoration(
-                        icon: Icon(
-                          Icons.lock_open_outlined,
-                          color: Color(0xffD2C2FF),
+                  SizedBox(
+                    height: 0.1.sh,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 50, right: 50),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          icon: Icon(
+                            Icons.lock_open_outlined,
+                            color: Color(0xffD2C2FF),
+                          ),
+                          suffixIcon: Icon(
+                            Icons.remove_red_eye_outlined,
+                            color: Color(0xffD2C2FF),
+                          ),
+                          helperText: ' ',
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFFD2C2FF)),
+                          ),
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Color(0xFF7D22E1)),
+                          ),
                         ),
-                        suffixIcon: Icon(
-                          Icons.remove_red_eye_outlined,
-                          color: Color(0xffD2C2FF),
-                        ),
-                        helperText: ' ',
-                        labelText: 'Password',
-                        labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
-                        focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFFD2C2FF)),
-                        ),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Color(0xFF7D22E1)),
-                        ),
+                          style: TextStyle(fontFamily: 'Axiforma',fontWeight: FontWeight.w400,fontSize: 12.sp)
                       ),
-                        style: TextStyle(fontFamily: 'Axiforma',fontWeight: FontWeight.w400,fontSize: 12.sp)
                     ),
                   ),
                   Row(
                     children: [
                       SizedBox(
-                        width: 0.12.sw,
+                        width: 0.14.sw,
                       ),
                       Icon(Icons.lock_open, color: Color(0xff8A8CBD)),
                       SizedBox(
@@ -138,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(fontSize: 10.sp, color: Color(0xff8A8CBD),fontWeight: FontWeight.w400,fontFamily: 'Montserrat'),
                       ),
                       SizedBox(
-                        width: 0.27.sw,
+                        width: 0.18.sw,
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -156,18 +162,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                   SizedBox(
-                    height: 0.08.sh,
+                    height: 0.06.sh,
                   ),
                   Row(
                     children: [
                       SizedBox(
-                        width: 0.12.sw,
+                        width: 0.18.sw,
                       ),
-                      Image(image:AssetImage('assets/images/Benchmarklogo.png'),height: 40,),
+                      Image(image:AssetImage('assets/images/Benchmarklogo.png'),height: 0.056.sh,),
                       SizedBox(
-                        width: 0.1.sw,
+                        width: 0.05.sw,
                       ),
-                      Image(image:AssetImage('assets/images/GooglePic.png'),height: 40,),
+                      Image(image:AssetImage('assets/images/GooglePic.png'),height: 0.056.sh,),
                     ],
                   ),
                   SizedBox(
@@ -176,17 +182,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 0.06.sh,
+                        width: 0.12.sh,
                       ),
-                      Text('Need any help?',style: TextStyle(fontSize: 11.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400),),
+                      Text('Need any help?',style: TextStyle(fontSize: 8.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400),),
                       SizedBox(
                         width: 0.01.sh,
                       ),
-                      Text('Contact:',style: TextStyle(fontSize: 11.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400)),
+                      Text('Contact:',style: TextStyle(fontSize: 8.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400)),
                       SizedBox(
-                        width: 0.003.sh,
+                        width: 0.004.sh,
                       ),
-                      Text('support@team-sqa.com',style: TextStyle(fontSize: 11.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400))
+                      Text('support@team-sqa.com',style: TextStyle(fontSize: 9.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400,decoration: TextDecoration.underline,))
                     ],
                   ),
                 ],
