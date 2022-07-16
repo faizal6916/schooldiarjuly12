@@ -48,7 +48,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   width: 1.sw,
                   height: 1.sh / 2 + 60,
                   child: ListView(
-                    children: [listdItem(), listdItem(), listdItem()],
+                    children: [
+                      listdItem(
+                        dateOn: '16-07-2022',
+                        headLine: 'Assignment',
+                        headBorder: Color(0xff505dff),
+                        headColor: Color(0x190cb1ff),
+                        imgUrl:
+                            'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                        matter:
+                            'Assignmes un hecho estable hace demasiado tiempo que un lector',
+                        subHeading: 'Pair of Linear Equations',
+                        tailText: 'update On',
+                        headIcon: Icons.menu_book_outlined,
+                        headTextColor: Color(0xff525bff),
+                        iconColor: Color(0xff5558ff),
+                      ),
+                      listdItem(
+                        dateOn: '16-07-2022',
+                        headLine: 'Circular',
+                        headBorder: Color(0xfffd5186),
+                        headColor: Color(0x1acd758e),
+                        imgUrl:
+                        'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                        matter:
+                        'Voluptas vero consequuntur molestias et. Dolores fuga voluptatem. Optio laboriosam ut amet assumenda perferendis. ',
+                        subHeading: 'sint vel voluptatem',
+                        tailText: 'published On',
+                        headIcon: Icons.campaign_outlined,
+                        headTextColor: Color(0xfffd5186),
+                        iconColor: Color(0xfffd5186),
+                      ),
+                    ],
                   ),
                 ),
               )
@@ -110,7 +141,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
           ],
         ),
       );
-  Widget listdItem() => Container(
+  Widget listdItem({
+    required String headLine,
+    required Color headColor,
+    required Color headBorder,
+    required String imgUrl,
+    required String subHeading,
+    required String matter,
+    required String tailText,
+    required String dateOn,
+    required IconData headIcon,
+    required Color headTextColor,
+    required Color iconColor,
+  }) =>
+      Container(
         width: 1.sw - 40,
         height: 260,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -130,25 +174,25 @@ class _ProfileScreenState extends State<ProfileScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 120,
+              width: 125,
               height: 30,
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               //color: Colors.red,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(15),
-                  color: Color(0x19cd758e),
-                  border: Border.all(color: Color(0xfffd5186))),
+                  color: headColor,
+                  border: Border.all(color: headBorder)),
               child: Row(
                 children: [
-                  Icon(Icons.campaign_outlined),
+                  Icon(headIcon,size: 18,color: iconColor,),
                   SizedBox(
                     width: 5,
                   ),
                   Text(
-                    'Circular',
+                    headLine,
                     style: TextStyle(
-                        color: Color(0xfffd5586),
-                        fontSize: 13.sp,
+                        color: headTextColor,
+                        fontSize: 12.sp,
                         fontFamily: 'Axiforma'),
                   )
                 ],
@@ -160,25 +204,26 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Row(
               children: [
                 CircleAvatar(
-                  radius: 20,
+                  radius: 22,
+                  backgroundImage: NetworkImage(imgUrl),
                 ),
                 SizedBox(
                   width: 20,
                 ),
                 Container(
-                    width: 250,
-                    height: 50,
-                    child: Text(
-                      'sint vel voluptatem sint vel voluptatem',
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
+                  width: 250,
+                  height: 50,
+                  child: Text(
+                    subHeading,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
                         color: Color(0xff3e3e3e),
                         fontSize: 16.sp,
                         fontFamily: 'Axiforma',
-                        fontWeight: FontWeight.w500
-                      ),
-                    ),)
+                        fontWeight: FontWeight.w500),
+                  ),
+                )
               ],
             ),
             SizedBox(
@@ -187,11 +232,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               width: 1.sw,
               height: 60,
-              child: Text('Voluptas vero consequuntur molestias et. Dolores fuga voluptatem. Optio laboriosam ut amet assumenda perferendis.',style: TextStyle(
-                color: Color(0xff787878),
-                fontSize: 12.sp,
-                fontFamily: 'Axiforma',
-              ),
+              child: Text(
+               matter,
+                style: TextStyle(
+                  color: Color(0xff787878),
+                  fontSize: 12.sp,
+                  fontFamily: 'Axiforma',
+                ),
                 maxLines: 3,
                 overflow: TextOverflow.ellipsis,
               ),
@@ -202,20 +249,29 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                Text('Updated On',style: TextStyle(
-                  color: Color(0xff787878),
-                  fontSize: 10.sp,
-                  fontFamily: 'Axiforma',
-                  fontStyle: FontStyle.italic
-                ),),
-                SizedBox(width: 10,),
+                Text(
+                  tailText,
+                  style: TextStyle(
+                      color: Color(0xff787878),
+                      fontSize: 10.sp,
+                      fontFamily: 'Axiforma',
+                      fontStyle: FontStyle.italic),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
                 Icon(Icons.calendar_month_outlined),
-                SizedBox(width: 10,),
-                Text('date',style: TextStyle(
-                  color: Color(0xff252525),
-                  fontSize: 11.sp,
-                  fontFamily: 'Axiforma',
-                ),)
+                SizedBox(
+                  width: 10,
+                ),
+                Text(
+                  dateOn,
+                  style: TextStyle(
+                    color: Color(0xff252525),
+                    fontSize: 11.sp,
+                    fontFamily: 'Axiforma',
+                  ),
+                )
               ],
             )
           ],
