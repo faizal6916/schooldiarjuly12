@@ -68,6 +68,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
       setState(() {
        // isClicked = true;
         _selctedIndex = indexNo;
+        print(indexNo);
       });
     },
     child: Container(
