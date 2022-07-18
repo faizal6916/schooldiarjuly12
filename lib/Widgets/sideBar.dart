@@ -11,7 +11,7 @@ class SideBar extends StatelessWidget {
       child: Material(
         child: Stack(
           children: [
-            Positioned(bottom: 0, child: bottomOfDrawer()),
+            Positioned(bottom: 0, child: bottomOfDrawer(context)),
             ListView(
               padding: customPadding,
               children: [
@@ -153,7 +153,7 @@ class SideBar extends StatelessWidget {
     );
   }
 
-  Widget bottomOfDrawer() {
+  Widget bottomOfDrawer(BuildContext context) {
     return Container(
       //padding: EdgeInsets.only(left: 10),
       child: Column(
@@ -210,25 +210,33 @@ class SideBar extends StatelessWidget {
               SizedBox(
                 width: 30,
               ),
-              Container(
-                child: Row(
-                  children: [
-                    Image(
-                      image: AssetImage('assets/images/Unlock@2x.png.png'),
-                      width: 20,
-                      height: 20,
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      'Reset password',
-                      style: TextStyle(
-                          fontSize: 12.sp,
-                          fontFamily: 'Axiforma',
-                          decoration: TextDecoration.underline),
-                    )
-                  ],
+              InkWell(
+                onTap: (){
+                  print('jhgkggkgu');
+                },
+                child: Container(
+                  width: 120,
+                  height: 40,
+                  color: Colors.red,
+                  child: Row(
+                    children: [
+                      Image(
+                        image: AssetImage('assets/images/Unlock@2x.png.png'),
+                        width: 20,
+                        height: 20,
+                      ),
+                      SizedBox(
+                        width: 4,
+                      ),
+                      Text(
+                        'Reset password',
+                        style: TextStyle(
+                            fontSize: 12.sp,
+                            fontFamily: 'Axiforma',
+                            decoration: TextDecoration.underline),
+                      )
+                    ],
+                  ),
                 ),
               )
             ],

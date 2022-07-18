@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
           '/about': (context) => AboutSceen(),
           '/downloads': (context) => DownloadScreen(),
           '/myprofile': (context) => MyProfileScreen(),
-          '/report': (context) => ReportScreen()
+          '/report': (context) => ReportScreen(),
         },
       )
     );

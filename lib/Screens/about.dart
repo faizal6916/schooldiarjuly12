@@ -30,7 +30,7 @@ class _AboutSceenState extends State<AboutSceen> {
         height: 0.79.sh,
         decoration: BoxDecoration(
             color: Color(0xffffffff),
-            borderRadius: BorderRadius.all(Radius.circular(15))),
+            borderRadius: BorderRadius.all(Radius.circular(15)),),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
