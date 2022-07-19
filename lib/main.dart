@@ -47,7 +47,6 @@ class MyApp extends StatelessWidget {
           '/downloads': (context) => DownloadScreen(),
           '/myprofile': (context) => MyProfileScreen(),
           '/report': (context) => ReportScreen(),
-          '/resetPassword': (context) => ResetPassword()
         },
       )
     );

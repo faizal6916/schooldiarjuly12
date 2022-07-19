@@ -23,33 +23,56 @@ class _AboutSceenState extends State<AboutSceen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    bottomNavigationBar: BottomNavBar(),
-    drawer: SideBar(),
-    key: _key,
-    appBar: CustomAppBar(
-      title: 'About Us',
-      globalKey: _key,
-      name: false,
-      appHeight: 100,
-    ),
-    body: ListView(
-      children: [
-        Container(
-          width: 1.sw,
-          height: 1.sh,
-          child: Stack(
-            children: [
-              Container(
-                width: 1.sw,
-                height: 250,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      image: AssetImage('assets/images/about_us_bg.png'),
-                      fit: BoxFit.cover),
-                ),
-                child: InkWell(
-                   onTap: _launchUrl,
-                    child: Image.asset('assets/images/play_button.png')),
+      drawer: SideBar(),
+      key: _key,
+      appBar: CustomAppBar(
+        title: 'About Us',
+        globalKey: _key,
+        name: false,
+        appHeight: 100,
+      ),
+      body: Container(
+        margin: EdgeInsets.symmetric(horizontal: 20),
+        padding: EdgeInsets.only(left: 36, top: 23),
+        width: 1.sw - 40,
+        height: 0.79.sh,
+        decoration: BoxDecoration(
+            color: Color(0xffffffff),
+            borderRadius: BorderRadius.all(Radius.circular(15)),),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //About
+            Text(
+              "About",
+              style: TextStyle(
+                color: Color(0xff517bfa),
+                fontWeight: FontWeight.w300,
+                fontFamily: "Axiforma",
+                fontStyle: FontStyle.normal,
+                fontSize: 19.sp,
+              ),
+              textAlign: TextAlign.left,
+            ),
+            SizedBox(
+              height: 0.03.sh,
+            ),
+            //Image
+            Image(image: AssetImage('assets/images/Logo2.png'),height: 0.07.sh,),
+            SizedBox(
+              height: 0.03.sh,
+            ),
+            // Version
+            Opacity(
+              opacity: 0.5,
+              child: Text(
+                "Version",
+                style: TextStyle(
+                    color: Color(0xff787878),
+                    fontWeight: FontWeight.w400,
+                    fontFamily: "Axiforma",
+                    fontStyle: FontStyle.normal,
+                    fontSize: 10.0),
               ),
               Positioned(
                 top: 160,
