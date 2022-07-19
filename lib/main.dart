@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:school_diary2022/Screens/about.dart';
-import 'package:school_diary2022/Screens/downloads.dart';
-import 'package:school_diary2022/Screens/my_profile.dart';
-import 'package:school_diary2022/Screens/profile.dart';
-import 'package:school_diary2022/Screens/report.dart';
-import 'package:school_diary2022/Screens/resetPassword.dart';
+import './Screens/Bottom_Menu/assignment_main_page.dart';
+import './Screens/Bottom_Menu/calendar_main_page.dart';
+import './Screens/Bottom_Menu/circular_main_page.dart';
+import './Screens/Bottom_Menu/fee_main_page.dart';
+import './Screens/about.dart';
+import './Screens/downloads.dart';
+import './Screens/my_profile.dart';
+import './Screens/profile.dart';
+import './Screens/report.dart';
+import './Screens/resetPassword.dart';
 import './Screens/splash.dart';
 
 void main() {
@@ -47,6 +51,11 @@ class MyApp extends StatelessWidget {
           '/downloads': (context) => DownloadScreen(),
           '/myprofile': (context) => MyProfileScreen(),
           '/report': (context) => ReportScreen(),
+          '/resetpassword': (context) => ResetPassword(),
+          '/circularmain' : (context) => CircularMainScreen(),
+          '/assignmentmain' : (context) => AssignmentMainScreen(),
+          '/calendarmain' : (context) => CalendarMainScreen(),
+          '/feemain' : (context) => FeeMainScreen()
         },
       )
     );
