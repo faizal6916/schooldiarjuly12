@@ -8,8 +8,10 @@ class SideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final customPadding = EdgeInsets.symmetric(horizontal: 20);
     return Drawer(
-      child: Material(
-        child: Stack(
+      child: Container(
+        height: 1.sh,
+        child: ListView(
+          padding: customPadding,
           children: [
             Positioned(bottom: 0, child: bottomOfDrawer(context)),
             ListView(
@@ -89,13 +91,16 @@ class SideBar extends StatelessWidget {
               ],
             ),
           ],
-          alignment: Alignment.center,
         ),
       ),
     );
   }
 
-  Widget buildMenuItem({required String text, required String imgLocation, VoidCallback? onClicked}) {
+  Widget buildMenuItem({
+    required String text,
+    required String imgLocation,
+    VoidCallback? onClicked,
+  }) {
     return ListTile(
       onTap: onClicked,
       hoverColor: Colors.white70,
@@ -115,8 +120,11 @@ class SideBar extends StatelessWidget {
     );
   }
 
-  Widget buildHeader(
-      {required String urlImage, required String name, required String email}) {
+  Widget buildHeader({
+    required String urlImage,
+    required String name,
+    required String email,
+  }) {
     return Container(
       padding: EdgeInsets.only(left: 10),
       child: Row(
@@ -142,9 +150,10 @@ class SideBar extends StatelessWidget {
               Text(
                 email,
                 style: TextStyle(
-                    color: Color(0xffe8a420),
-                    fontSize: 12.sp,
-                    fontFamily: 'Axiforma'),
+                  color: Color(0xffe8a420),
+                  fontSize: 12.sp,
+                  fontFamily: 'Axiforma',
+                ),
               )
             ],
           )
@@ -152,120 +161,116 @@ class SideBar extends StatelessWidget {
       ),
     );
   }
+  //--------------------------------Not Using---------------------------------//
+  // Widget bottomOfDrawer({required VoidCallback onReset}) {
+  //   return Container(
+  //     //padding: EdgeInsets.only(left: 10),
+  //     child: Column(
+  //       children: [
+  //         //Image(image: AssetImage('assets/images/dubai.png')),
+  //         Container(
+  //           height: 50,
+  //           padding: EdgeInsets.all(5),
+  //           decoration: BoxDecoration(
+  //             borderRadius: BorderRadius.circular(10),
+  //             color: Colors.yellow.shade100,
+  //             //image: DecorationImage(image: AssetImage('assets/images/dubai.png'))
+  //           ),
+  //           child: Image(
+  //             image: AssetImage('assets/images/dubai.png'),
+  //           ),
+  //         ),
+  //         SizedBox(
+  //           height: 15,
+  //         ),
+  //         //Divider(thickness: 3,color: Colors.black,),
+  //         Container(
+  //           //margin: EdgeInsets.symmetric(horizontal: 5),
+  //           width: 0.7.sw,
+  //           height: 1,
+  //           color: Colors.black26,
+  //         ),
+  //         SizedBox(
+  //           height: 15,
+  //         ),
+  //         Row(
+  //           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+  //           children: [
+  //             Container(
+  //               child: Row(
+  //                 children: [
+  //                   Icon(
+  //                     Icons.arrow_circle_left_outlined,
+  //                     color: Colors.red,
+  //                   ),
+  //                   SizedBox(
+  //                     width: 4,
+  //                   ),
+  //                   Text(
+  //                     'Logout',
+  //                     style: TextStyle(
+  //                       fontSize: 12.sp,
+  //                       fontFamily: 'Axiforma',
+  //                     ),
+  //                   )
+  //                 ],
+  //               ),
+  //             ),
+  //             SizedBox(
+  //               width: 30,
+  //             ),
+  //             InkWell(
+  //               onTap: onReset,
+  //               child: Row(
+  //                 children: [
+  //                   Image(
+  //                     image: AssetImage('assets/images/Unlock@2x.png.png'),
+  //                     width: 20,
+  //                     height: 20,
+  //                   ),
+  //                   SizedBox(
+  //                     width: 4,
+  //                   ),
+  //                   Text(
+  //                     'Reset password',
+  //                     style: TextStyle(
+  //                         fontSize: 12.sp,
+  //                         fontFamily: 'Axiforma',
+  //                         decoration: TextDecoration.underline),
+  //                   )
+  //                 ],
+  //               ),
+  //             )
+  //           ],
+  //         ),
+  //         SizedBox(
+  //           height: 20,
+  //         ),
+  //       ],
+  //     ),
+  //   );
+  // }
 
-  Widget bottomOfDrawer(BuildContext context) {
-    return Container(
-      //padding: EdgeInsets.only(left: 10),
-      child: Column(
-        children: [
-          //Image(image: AssetImage('assets/images/dubai.png')),
-          Container(
-            height: 50,
-            padding: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              color: Colors.yellow.shade100,
-              //image: DecorationImage(image: AssetImage('assets/images/dubai.png'))
-            ),
-            child: Image(
-              image: AssetImage('assets/images/dubai.png'),
-            ),
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          //Divider(thickness: 3,color: Colors.black,),
-          Container(
-            //margin: EdgeInsets.symmetric(horizontal: 5),
-            width: 0.7.sw,
-            height: 1,
-            color: Colors.black26,
-          ),
-          SizedBox(
-            height: 15,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.arrow_circle_left_outlined,
-                      color: Colors.red,
-                    ),
-                    SizedBox(
-                      width: 4,
-                    ),
-                    Text(
-                      'Logout',
-                      style: TextStyle(
-                        fontSize: 12.sp,
-                        fontFamily: 'Axiforma',
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              InkWell(
-                onTap: (){
-                  print('jhgkggkgu');
-                },
-                child: Container(
-                  width: 120,
-                  height: 40,
-                  color: Colors.red,
-                  child: Row(
-                    children: [
-                      Image(
-                        image: AssetImage('assets/images/Unlock@2x.png.png'),
-                        width: 20,
-                        height: 20,
-                      ),
-                      SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        'Reset password',
-                        style: TextStyle(
-                            fontSize: 12.sp,
-                            fontFamily: 'Axiforma',
-                            decoration: TextDecoration.underline),
-                      )
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
-          SizedBox(
-            height: 20,
-          ),
-        ],
-      ),
-    );
-  }
-
-  void selectedItem(BuildContext context, int index){
+  void selectedItem(BuildContext context, int index) {
     Navigator.of(context).pop();
     switch (index) {
       case 0:
         Navigator.pushNamed(context, '/about');
-      break;
+        break;
       case 1:
         Navigator.pushNamed(context, '/downloads');
-      break;
+        break;
       case 2:
         Navigator.pushNamed(context, '/myprofile');
-      break;
+        break;
       case 3:
         Navigator.pushNamed(context, '/report');
-      break;
+        break;
       case 4:
         Navigator.pushNamed(context, '/home');
+        break;
+      case 5:
+        Navigator.pushNamed(context, '/resetPassword');
         break;
       default:
         Navigator.pushNamed(context, '/home');

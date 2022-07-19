@@ -156,7 +156,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   }) =>
       Container(
         width: 1.sw - 40,
-        height: 260,
+        height: 270,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
@@ -186,7 +186,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 children: [
                   Icon(headIcon,size: 18,color: iconColor,),
                   SizedBox(
-                    width: 5,
+                    width: 3,
                   ),
                   Text(
                     headLine,
@@ -208,15 +208,16 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   backgroundImage: NetworkImage(imgUrl),
                 ),
                 SizedBox(
-                  width: 20,
+                  width: 15,
                 ),
                 Container(
                   width: 250,
-                  height: 50,
+                  height: 60,
                   child: Text(
                     subHeading,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
+                    //textAlign: TextAlign.center,
                     style: TextStyle(
                         color: Color(0xff3e3e3e),
                         fontSize: 16.sp,

@@ -33,51 +33,49 @@ class _ReportScreenState extends State<ReportScreen> with TickerProviderStateMix
         name: false,
         appHeight: 100,
       ),
-      body: Container(
-       child: Column(
-         children: [
-           Container(
+      body: Column(
+        children: [
+          Container(
+           width: 1.sw,
+            //width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white
+            ),
+            height: 50,
+            child: TabBar(
+
+              controller: _tabController,
+              //isScrollable: true,
+              labelColor: Color(0xff34378b),
+              labelStyle: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,fontFamily: 'Axiforma'),
+              // indicator: BoxDecoration(
+              //     borderRadius: BorderRadius.circular(8),
+              //     color: Colors.white),
+             indicatorColor: Color(0xff34378b),
+             // indicatorSize: TabBarIndicatorSize.tab,
+              unselectedLabelColor:
+              Color(0xFF414D55).withOpacity(0.36),
+              tabs: [
+                Tab(text: 'Exams',),
+                Tab(text: 'Reports',),
+                Tab(text: 'Hall Tickets',)
+              ],
+            ),
+          ),
+          Container(
             width: 1.sw,
-             //width: double.infinity,
-             decoration: BoxDecoration(
-               color: Colors.white
-             ),
-             height: 50,
-             child: TabBar(
+            height: 1.sh/2 + 140,
+            child: TabBarView(
+              controller: _tabController,
+              children: [
+                ExamsView(),
+                ReportsView(),
+                HallTicketView(),
 
-               controller: _tabController,
-               //isScrollable: true,
-               labelColor: Color(0xff34378b),
-               labelStyle: TextStyle(fontSize: 12.sp,fontWeight: FontWeight.w400,fontFamily: 'Axiforma'),
-               // indicator: BoxDecoration(
-               //     borderRadius: BorderRadius.circular(8),
-               //     color: Colors.white),
-              indicatorColor: Color(0xff34378b),
-              // indicatorSize: TabBarIndicatorSize.tab,
-               unselectedLabelColor:
-               Color(0xFF414D55).withOpacity(0.36),
-               tabs: [
-                 Tab(text: 'Exams',),
-                 Tab(text: 'Reports',),
-                 Tab(text: 'Hall Tickets',)
-               ],
-             ),
-           ),
-           Container(
-             width: 1.sw,
-             height: 1.sh/2 + 140,
-             child: TabBarView(
-               controller: _tabController,
-               children: [
-                 ExamsView(),
-                 ReportsView(),
-                 HallTicketView(),
-
-               ],
-             ),
-           )
-         ],
-       ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }

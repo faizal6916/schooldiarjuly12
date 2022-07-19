@@ -5,6 +5,7 @@ import 'package:school_diary2022/Screens/downloads.dart';
 import 'package:school_diary2022/Screens/my_profile.dart';
 import 'package:school_diary2022/Screens/profile.dart';
 import 'package:school_diary2022/Screens/report.dart';
+import 'package:school_diary2022/Screens/resetPassword.dart';
 import './Screens/splash.dart';
 
 void main() {
