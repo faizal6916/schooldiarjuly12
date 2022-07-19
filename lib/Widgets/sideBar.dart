@@ -13,83 +13,138 @@ class SideBar extends StatelessWidget {
         child: ListView(
           padding: customPadding,
           children: [
-            Positioned(bottom: 0, child: bottomOfDrawer(context)),
-            ListView(
-              padding: customPadding,
-              children: [
-                SizedBox(
-                  height: 0.05.sh,
-                ),
-                buildHeader(
-                    urlImage:
-                        'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                    name: 'Christopher Howard',
-                    email: 'how@gamil.com'),
-                SizedBox(
-                  height: 0.03.sh,
-                ),
-                Divider(thickness: 2, color: Color(0xfffed330)),
-                SizedBox(
-                  height: 0.025.sh,
-                ),
-                buildMenuItem(
-                  text: 'Home',
-                  imgLocation: 'assets/images/homeicon.png',
-                  onClicked: () => selectedItem(context, 4),
-                ),
-                Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: Colors.grey.shade200,
-                  indent: 0.135.sw,
-                ),
-                buildMenuItem(
-                  text: 'About',
-                  imgLocation: 'assets/images/ic_about.png',
-                  onClicked: () => selectedItem(context, 0),
-                ),
-                Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: Colors.grey.shade200,
-                  indent: 0.135.sw,
-                ),
-                buildMenuItem(
-                  text: 'Downloads',
-                  imgLocation: 'assets/images/ic_downloads.png',
-                  onClicked: () => selectedItem(context, 1),
-                ),
-                Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: Colors.grey.shade200,
-                  indent: 0.135.sw,
-                ),
-                buildMenuItem(
-                  text: 'MyProfile',
-                  imgLocation: 'assets/images/ic_profile.png',
-                  onClicked: () => selectedItem(context, 2),
-                ),
-                Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: Colors.grey.shade200,
-                  indent: 0.135.sw,
-                ),
-                buildMenuItem(
-                  text: 'Report Cards',
-                  imgLocation: 'assets/images/ic_report_card.png',
-                  onClicked: () => selectedItem(context, 3),
-                ),
-                Divider(
-                  height: 1,
-                  thickness: 1,
-                  color: Colors.grey.shade200,
-                  indent: 0.135.sw,
-                ),
-                //bottomOfDrawer(),
-              ],
+            Container(
+              width: double.infinity,
+              height: 1.sh - 200,
+              child: Column(
+                children: [
+                  SizedBox(
+                    height: 0.05.sh,
+                  ),
+                  buildHeader(
+                      urlImage:
+                      'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                      name: 'Christopher Howard',
+                      email: 'how@gamil.com'),
+                  SizedBox(
+                    height: 0.03.sh,
+                  ),
+                  Divider(thickness: 2, color: Color(0xfffed330)),
+                  SizedBox(
+                    height: 0.025.sh,
+                  ),
+                  buildMenuItem(
+                    text: 'Home',
+                    imgLocation: 'assets/images/homeicon.png',
+                    onClicked: () => selectedItem(context, 4),
+                  ),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: Colors.grey.shade200,
+                    indent: 0.135.sw,
+                  ),
+                  buildMenuItem(
+                    text: 'About',
+                    imgLocation: 'assets/images/ic_about.png',
+                    onClicked: () => selectedItem(context, 0),
+                  ),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: Colors.grey.shade200,
+                    indent: 0.135.sw,
+                  ),
+                  buildMenuItem(
+                    text: 'Downloads',
+                    imgLocation: 'assets/images/ic_downloads.png',
+                    onClicked: () => selectedItem(context, 1),
+                  ),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: Colors.grey.shade200,
+                    indent: 0.135.sw,
+                  ),
+                  buildMenuItem(
+                    text: 'MyProfile',
+                    imgLocation: 'assets/images/ic_profile.png',
+                    onClicked: () => selectedItem(context, 2),
+                  ),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: Colors.grey.shade200,
+                    indent: 0.135.sw,
+                  ),
+                  buildMenuItem(
+                    text: 'Report Cards',
+                    imgLocation: 'assets/images/ic_report_card.png',
+                    onClicked: () => selectedItem(context, 3),
+                  ),
+                  Divider(
+                    height: 1,
+                    thickness: 1,
+                    color: Colors.grey.shade200,
+                    indent: 0.135.sw,
+                  ),
+                ],
+              ),
             ),
+
+            Container(
+              width: double.infinity,
+              height: 200,
+              child: Column(
+                children: [
+                  Container(
+                    height: 50,
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.yellow.shade100,
+                      //image: DecorationImage(image: AssetImage('assets/images/dubai.png'))
+                    ),
+                    child: Image(
+                      image: AssetImage('assets/images/dubai.png'),
+                    ),
+                  ),
+                  Divider(thickness: 2,color: Colors.black54,),
+                  Row(
+                    children: [
+                      SizedBox(width: 5,),
+                      SizedBox(
+                        width: 100,
+                        child: Row(
+                          children: [
+                            Icon(Icons.arrow_circle_left_outlined),
+                            SizedBox(width: 5,),
+                            Text('Log Out')
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 5,),
+                      InkWell(
+                        onTap: (){
+                          Navigator.of(context).pop();
+                          Navigator.pushNamed(context, '/resetpassword');
+                        },
+                        child: SizedBox(
+                          width: 150,
+                          child: Row(
+                            children: [
+                              Icon(Icons.lock),
+                              SizedBox(width: 5,),
+                              Text('Reset password')
+                            ],
+                          ),
+                        ),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            )
           ],
         ),
       ),
