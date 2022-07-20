@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school_diary2022/Screens/profile.dart';
 import './login.dart';
 
 class SplashScreen extends StatefulWidget {
