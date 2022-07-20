@@ -64,7 +64,7 @@ class _ReportScreenState extends State<ReportScreen> with TickerProviderStateMix
           ),
           Container(
             width: 1.sw,
-            height: 1.sh/2 + 140,
+            height: 1.sh - 260,
             child: TabBarView(
               controller: _tabController,
               children: [

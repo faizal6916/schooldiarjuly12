@@ -31,7 +31,7 @@ class _AboutSceenState extends State<AboutSceen> {
             children: [
               Container(
                 width: 1.sw,
-                height: 1.sh,
+                height: 1.sh+50,
                 //color: Colors.red,
               ),
               Positioned(

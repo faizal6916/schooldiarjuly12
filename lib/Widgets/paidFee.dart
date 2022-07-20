@@ -16,6 +16,7 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
     return Container(
       width: 1.sw,
       height: isExpanded? 700 : 140,
+      margin: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
@@ -46,7 +47,7 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black54,
-                    offset: Offset(1, 1),
+                    offset: Offset(0, 0),
                     //spreadRadius: 2
                     blurRadius: 5,
                   )

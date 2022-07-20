@@ -48,7 +48,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
-      height: 0.12.sh,
+      height: 100,
       //padding: EdgeInsets.symmetric(horizontal: 6, vertical: 2),
       decoration: BoxDecoration(
           color: Colors.white,
