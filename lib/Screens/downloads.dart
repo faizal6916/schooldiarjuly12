@@ -38,7 +38,7 @@ class _DownloadScreenState extends State<DownloadScreen>
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
-        bottomNavigationBar: BottomNavBar(),
+        bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
         backgroundColor: Colors.grey.shade200,
         drawer: SideBar(),
         key: _key,

@@ -2,7 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavBar extends StatefulWidget {
-  const BottomNavBar({Key? key}) : super(key: key);
+  final Color menuClr;
+  final int? menuIndex;
+
+  const BottomNavBar({Key? key,
+    required this.menuClr,
+    this.menuIndex
+  }) : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -33,6 +39,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
     }
   }
   @override
+  void initState() {
+    // TODO: implement initState
+    _selctedIndex == widget.menuIndex;
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
@@ -53,35 +65,40 @@ class _BottomNavBarState extends State<BottomNavBar> {
           bottomMenuItem(
             menuIcon: Icons.campaign_outlined,
             menuName: 'Circular',
-            onTapColor: Color(0xfffd5386),
+            //onTapColor: Color(0xfffd5386),
+              onTapColor: widget.menuClr,
             indexNo: 0,
             context: context
           ),
           bottomMenuItem(
             menuIcon: Icons.menu_book_outlined,
             menuName: 'Assignment',
-            onTapColor: Color(0xff4966ff),
+            //onTapColor: Color(0xff4966ff),
+              onTapColor: widget.menuClr,
             indexNo: 1,
               context: context
           ),
           bottomMenuItem(
             menuIcon: Icons.calendar_month_outlined,
             menuName: 'Calendar',
-            onTapColor: Color(0xffbb49ff),
+            //onTapColor: Color(0xffbb49ff),
+              onTapColor: widget.menuClr,
             indexNo: 2,
               context: context
           ),
           bottomMenuItem(
             menuIcon: Icons.payments_outlined,
             menuName: 'Fee',
-            onTapColor: Color(0xff00b59c),
+            //onTapColor: Color(0xff00b59c),
+              onTapColor: widget.menuClr,
             indexNo: 3,
               context: context
           ),
           bottomMenuItem(
             menuIcon: Icons.pie_chart,
             menuName: 'Assessments',
-            onTapColor: Color(0xfffd5386),
+            //onTapColor: Color(0xfffd5386),
+              onTapColor: widget.menuClr,
             indexNo: 4,
               context: context
           )
@@ -102,7 +119,9 @@ class _BottomNavBarState extends State<BottomNavBar> {
           setState(() {
             // isClicked = true;
             _selctedIndex = indexNo;
+
             print(indexNo);
+            print('selected index${_selctedIndex}');
           });
           _selectedMenu(context: context,index: indexNo);
         },
@@ -116,10 +135,12 @@ class _BottomNavBarState extends State<BottomNavBar> {
               CircleAvatar(
                 radius: 20,
                 backgroundColor:
-                    _selctedIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
+                    //_selctedIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
+                widget.menuIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
+                //_selctedIndex == indexNo ? Color(0xfff2f2f2) : onTapColor,
                 child: Icon(
                   menuIcon,
-                  color: _selctedIndex == indexNo
+                  color: widget.menuIndex == indexNo
                       ? Colors.white
                       : Color(0xff818181),
                 ),

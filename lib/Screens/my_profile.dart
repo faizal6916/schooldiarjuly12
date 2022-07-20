@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../Widgets/bottomNavBar.dart';
 import '../Widgets/customAppbar.dart';
 import '../Widgets/sideBar.dart';
 
@@ -16,6 +17,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomNavBar(menuClr:Color(0xfff2f2f2)),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(
@@ -33,7 +35,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
             margin: EdgeInsets.symmetric(horizontal: 20),
             padding: EdgeInsets.only(left: 36, top: 15),
             width: 1.sw - 40,
-            height: 0.74.sh,
+            height: 0.69.sh,
             decoration: BoxDecoration(
                 color: Color(0xffffffff),
                 borderRadius: BorderRadius.all(Radius.circular(15)),boxShadow: [
