@@ -118,7 +118,7 @@ class _DownloadScreenState extends State<DownloadScreen>
             ),
             Container(
               width: 1.sw,
-              height: 1.sh / 2 + 60,
+              height: 1.sh -350,
               child: TabBarView(
                 controller: _tabController,
                 children: [

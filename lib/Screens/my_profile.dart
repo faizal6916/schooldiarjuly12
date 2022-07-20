@@ -26,7 +26,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
         name: false,
         appHeight: 100,
       ),
-      body: Column(
+      body: ListView(
         children: [
           SizedBox(
             height: 0.02.sh,
@@ -35,7 +35,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
             margin: EdgeInsets.symmetric(horizontal: 20),
             padding: EdgeInsets.only(left: 36, top: 15),
             width: 1.sw - 40,
-            height: 0.69.sh,
+            height: 0.8.sh,
             decoration: BoxDecoration(
                 color: Color(0xffffffff),
                 borderRadius: BorderRadius.all(Radius.circular(15)),boxShadow: [
@@ -396,30 +396,30 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
               ],
             ),
           ),
-
-          Padding(
-            padding:  EdgeInsets.only(left: 0.1.sw,top: 0.01.sh
-            ),
-            child: Row(
-              children: [
-                Image(image: AssetImage('assets/images/LockLogo.png'),height: 20,),
-                SizedBox(
-                  width: 0.03.sw,
-                ),
-                Text(
-                    "reset password",
-                    style:  TextStyle(
-                        color:   Color(0xff787878),
-                        fontWeight: FontWeight.w400,
-                        fontFamily: "Axiforma",
-                        fontStyle:  FontStyle.normal,
-                        fontSize: 12.sp
-                    ),
-
-                )
-              ],
-            ),
-          )
+          //
+          // Padding(
+          //   padding:  EdgeInsets.only(left: 0.1.sw,top: 0.01.sh
+          //   ),
+          //   child: Row(
+          //     children: [
+          //       Image(image: AssetImage('assets/images/LockLogo.png'),height: 20,),
+          //       SizedBox(
+          //         width: 0.03.sw,
+          //       ),
+          //       Text(
+          //           "reset password",
+          //           style:  TextStyle(
+          //               color:   Color(0xff787878),
+          //               fontWeight: FontWeight.w400,
+          //               fontFamily: "Axiforma",
+          //               fontStyle:  FontStyle.normal,
+          //               fontSize: 12.sp
+          //           ),
+          //
+          //       )
+          //     ],
+          //   ),
+          // )
         ],
       ),
       

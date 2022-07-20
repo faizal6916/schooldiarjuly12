@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../../Widgets/pendingFee.dart';
 
 
 class PendingFee extends StatelessWidget {
@@ -14,6 +15,8 @@ class PendingFee extends StatelessWidget {
       color: Colors.grey.shade200,
       child: ListView(
         children: [
+             PendingFeeWidget(),
+          PendingFeeWidget(),
 
         ],
       ),
