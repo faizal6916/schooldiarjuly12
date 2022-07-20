@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:dotted_border/dotted_border.dart';
 
-class PendingFeeWidget extends StatefulWidget {
-  const PendingFeeWidget({Key? key}) : super(key: key);
+class PaidFeeWidget extends StatefulWidget {
+  const PaidFeeWidget({Key? key}) : super(key: key);
 
   @override
-  State<PendingFeeWidget> createState() => _PendingFeeWidgetState();
+  State<PaidFeeWidget> createState() => _PaidFeeWidgetState();
 }
 
-class _PendingFeeWidgetState extends State<PendingFeeWidget> {
+class _PaidFeeWidgetState extends State<PaidFeeWidget> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {

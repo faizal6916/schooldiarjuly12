@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../Widgets/paidFee.dart';
+
 class PaidFee extends StatelessWidget {
   const PaidFee({Key? key}) : super(key: key);
 
@@ -13,11 +15,7 @@ class PaidFee extends StatelessWidget {
       color: Colors.grey.shade200,
       child: ListView(
         children: [
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.yellow,
-          )
+          PaidFeeWidget()
         ],
       ),
     );
