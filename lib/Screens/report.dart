@@ -24,7 +24,7 @@ class _ReportScreenState extends State<ReportScreen> with TickerProviderStateMix
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       backgroundColor: Colors.grey.shade200,
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfffd5386),menuIndex: 4),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(

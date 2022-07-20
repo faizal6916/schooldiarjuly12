@@ -16,7 +16,7 @@ class _AboutSceenState extends State<AboutSceen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(),
+      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(
