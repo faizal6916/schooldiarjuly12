@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:school_diary2022/Widgets/pendingFee.dart';
+
 
 class PendingFee extends StatelessWidget {
   const PendingFee({Key? key}) : super(key: key);
@@ -14,7 +14,7 @@ class PendingFee extends StatelessWidget {
       color: Colors.grey.shade200,
       child: ListView(
         children: [
-          PendingFeeWidget(),
+
         ],
       ),
     );

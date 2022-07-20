@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         key: _key,
         // appBar: CustomAppBar(name: true,title: 'Home',appHeight: 200,centreText: false,globalKey: _key),
         drawer: SideBar(),
-        bottomNavigationBar: BottomNavBar(),
+        bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
         body: Container(
           width: 1.sw,
           height: 1.sh,
