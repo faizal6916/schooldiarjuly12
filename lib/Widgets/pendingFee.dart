@@ -16,7 +16,7 @@ class _PendingFeeWidgetState extends State<PendingFeeWidget> {
     return Container(
       width: 1.sw,
       height: isExpanded? 450 : 200,
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.only(bottom: 40),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),

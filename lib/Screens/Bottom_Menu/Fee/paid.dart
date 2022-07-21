@@ -16,7 +16,10 @@ class PaidFee extends StatelessWidget {
       child: ListView(
         children: [
           PaidFeeWidget(),
-          PaidFeeWidget()
+          PaidFeeWidget(),
+          PaidFeeWidget(),
+          PaidFeeWidget(),
+
         ],
       ),
     );
