@@ -133,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 0.14.sw,
+                        width: 0.13.sw,
                       ),
                       Icon(Icons.lock_open, color: Color(0xff8A8CBD)),
                       SizedBox(
@@ -144,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         style: TextStyle(fontSize: 10.sp, color: Color(0xff8A8CBD),fontWeight: FontWeight.w400,fontFamily: 'Montserrat'),
                       ),
                       SizedBox(
-                        width: 0.18.sw,
+                        width: 0.22.sw,
                       ),
                       ElevatedButton(
                         onPressed: () {
@@ -167,13 +167,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 0.18.sw,
+                        width: 0.16.sw,
                       ),
-                      Image(image:AssetImage('assets/images/Benchmarklogo.png'),height: 0.056.sh,),
+                      Image(image:AssetImage('assets/images/Benchmarklogo.png'),height: 0.045.sh,),
                       SizedBox(
-                        width: 0.05.sw,
+                        width: 0.04.sw,
                       ),
-                      Image(image:AssetImage('assets/images/GooglePic.png'),height: 0.056.sh,),
+                      Image(image:AssetImage('assets/images/GooglePic.png'),height: 0.045.sh,),
                     ],
                   ),
                   SizedBox(
@@ -182,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Row(
                     children: [
                       SizedBox(
-                        width: 0.12.sh,
+                        width: 0.085.sh,
                       ),
                       Text('Need any help?',style: TextStyle(fontSize: 8.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400),),
                       SizedBox(
