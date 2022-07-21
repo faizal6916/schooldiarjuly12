@@ -18,7 +18,7 @@ class _ReportsViewState extends State<ReportsView> {
     return Container(
       width: 1.sw - 40,
       //height: 1.sh/2 + 300,
-      padding: EdgeInsets.all(20),
+      padding: EdgeInsets.all(10),
       color: Colors.grey.shade200,
       child: ListView(
 

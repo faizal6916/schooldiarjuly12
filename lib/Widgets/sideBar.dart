@@ -15,11 +15,11 @@ class SideBar extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              height: 1.sh - 200,
+              height: 1.sh - 110,
               child: Column(
                 children: [
                   SizedBox(
-                    height: 0.05.sh,
+                    height: 0.075.sh,
                   ),
                   buildHeader(
                       urlImage:

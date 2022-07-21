@@ -30,8 +30,10 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
       ),
       body: Container(
         width: 1.sw,
+
         height: 1.sh - 220,
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+
         child: ListView(
           children: [
             Downloadables(date: '22',month: 'JUN',details: 'summer Vacation &PTM for PT2-CR 108',topic:'summer Vacation &PTM for PT2-CR 108' ,name: 'Principal'),

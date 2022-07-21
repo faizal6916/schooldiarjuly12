@@ -62,7 +62,9 @@ class _FeeMainScreenState extends State<FeeMainScreen> with TickerProviderStateM
           ),
           Container(
             width: 1.sw,
-            height: 1.sh/2 + 140,
+            height: 1.sh-250,
+            //margin: EdgeInsets.only(bottom: 50),
+            //padding: EdgeInsets.only(bottom: 50),
             child: TabBarView(
               controller: _tabController,
               children: [
