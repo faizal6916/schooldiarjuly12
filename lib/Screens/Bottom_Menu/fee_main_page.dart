@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../notifications.dart';
 import './Fee/paid.dart';
 import './Fee/pending.dart';
 
@@ -22,6 +23,7 @@ class _FeeMainScreenState extends State<FeeMainScreen> with TickerProviderStateM
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 2, vsync: this);
     return Scaffold(
+      endDrawer: NotificationScreen(),
       backgroundColor: Colors.grey.shade200,
       bottomNavigationBar: BottomNavBar(menuClr: Color(0xffc3ffe8),menuIndex: 3,secndClr: Color(0xfff0fff4),icnClr: Color(0xff00b59c)),
       drawer: SideBar(),

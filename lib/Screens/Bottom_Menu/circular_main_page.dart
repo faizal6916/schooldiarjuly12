@@ -5,6 +5,7 @@ import 'package:school_diary2022/Widgets/downloadables.dart';
 import '../../Widgets/bottomNavBar.dart';
 import '../../Widgets/customAppbar.dart';
 import '../../Widgets/sideBar.dart';
+import '../notifications.dart';
 
 class CircularMainScreen extends StatefulWidget {
   const CircularMainScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: NotificationScreen(),
       bottomNavigationBar:
           BottomNavBar(menuClr: Color(0xffffc8d1), menuIndex: 0,secndClr: Color(0xfffff6f7),icnClr: Color(0xfffd3a84)),
       drawer: SideBar(),

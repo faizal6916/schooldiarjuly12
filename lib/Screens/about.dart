@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../Widgets/bottomNavBar.dart';
 import '../Widgets/sideBar.dart';
 import '../Widgets/customAppbar.dart';
+import './notifications.dart';
 
 class AboutSceen extends StatefulWidget {
   const AboutSceen({Key? key}) : super(key: key);
@@ -26,6 +27,7 @@ class _AboutSceenState extends State<AboutSceen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: NotificationScreen(),
       bottomNavigationBar: BottomNavBar(
           menuClr: Color(0xfff2f2f2),
           secndClr: Color(0xfff2f2f2),

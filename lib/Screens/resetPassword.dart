@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Widgets/customAppbar.dart';
 import '../Widgets/sideBar.dart';
 import '../Widgets/bottomNavBar.dart';
+import './notifications.dart';
 
 class ResetPassword extends StatefulWidget {
   const ResetPassword({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _ResetPasswordState extends State<ResetPassword> {
     return Scaffold(
       key: _key,
       drawer: SideBar(),
+        endDrawer: NotificationScreen(),
       bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2),icnClr: Color(0xff818181)),
       appBar: CustomAppBar(
         title: 'Reset Password',
