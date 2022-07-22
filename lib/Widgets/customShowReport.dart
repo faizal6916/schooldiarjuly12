@@ -16,8 +16,9 @@ class ShowReportCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 1.sw,
-      height: 75,
+      height: 100,
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      margin: EdgeInsets.symmetric( vertical: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(15),
@@ -33,6 +34,7 @@ class ShowReportCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
+          SizedBox(height: 3,),
           Container(
             width: double.infinity,
             height: 30,
@@ -66,7 +68,8 @@ class ShowReportCard extends StatelessWidget {
                 fontFamily: 'Axiforma'
               ),)
             ],
-          )
+          ),
+          SizedBox(height: 3,),
         ],
       ),
     );

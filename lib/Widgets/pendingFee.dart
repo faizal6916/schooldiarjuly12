@@ -16,10 +16,20 @@ class _PendingFeeWidgetState extends State<PendingFeeWidget> {
     return Container(
       width: 1.sw,
       height: isExpanded? 450 : 200,
-      margin: EdgeInsets.only(bottom: 40),
+      margin: EdgeInsets.symmetric( vertical: 10),
+      //padding: EdgeInsets.only(bottom: 20),
       decoration: BoxDecoration(
         color: Colors.white,
+        //color: Colors.grey.shade200,
         borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            // BoxShadow(
+            //   color: Colors.black54,
+            //   offset: Offset(1, 1),
+            //   //spreadRadius: 2
+            //   blurRadius: 5,
+            // )
+          ]
       ),
       child: Column(
         children: [
@@ -30,19 +40,21 @@ class _PendingFeeWidgetState extends State<PendingFeeWidget> {
               });
             },
             child: Container(
-              width: double.infinity,
+              width: 1.sw,
               height: 200,
               //color: Colors.red,
+
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(15),
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.black54,
-                        offset: Offset(0.5, 0.5),
-                        //spreadRadius: 2
-                        blurRadius: 1)
-                  ]),
+                      color: Colors.black54,
+                      offset: Offset(1, 1),
+                      //spreadRadius: 2
+                      blurRadius: 5,
+                    )
+                  ],),
               child: Column(
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [

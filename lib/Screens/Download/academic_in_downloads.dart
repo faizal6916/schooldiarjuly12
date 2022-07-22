@@ -18,7 +18,17 @@ class AcademinInDownload extends StatelessWidget {
            headText: 'Friday Shedule',
            typeOfReport: 'Circular',
            reportDate: '22-08-1995',
-         )
+         ),
+          ShowReportCard(
+            headText: 'Friday Shedule',
+            typeOfReport: 'Circular',
+            reportDate: '22-08-1995',
+          ),
+          ShowReportCard(
+            headText: 'Friday Shedule',
+            typeOfReport: 'Circular',
+            reportDate: '22-08-1995',
+          )
         ],
       ),
     );

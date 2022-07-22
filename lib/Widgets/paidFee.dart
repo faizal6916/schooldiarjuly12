@@ -16,9 +16,9 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
     return Container(
       width: 1.sw,
       height: isExpanded? 700 : 140,
-      margin: EdgeInsets.only(bottom: 20),
+      margin: EdgeInsets.symmetric( vertical: 10),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color:  Colors.white,
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           // BoxShadow(
@@ -38,7 +38,7 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
               });
             },
             child: Container(
-              width: double.infinity,
+              width:   1.sw,
               height: 140,
               //color: Colors.red,
               decoration: BoxDecoration(
@@ -47,7 +47,7 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
                 boxShadow: [
                   BoxShadow(
                     color: Colors.black54,
-                    offset: Offset(0, 0),
+                    offset: Offset(0.5, 0.5),
                     //spreadRadius: 2
                     blurRadius: 5,
                   )
