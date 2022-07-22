@@ -22,6 +22,7 @@ class _FeeMainScreenState extends State<FeeMainScreen> with TickerProviderStateM
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 2, vsync: this);
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       bottomNavigationBar: BottomNavBar(menuClr: Color(0xff00b59c),menuIndex: 3,),
       drawer: SideBar(),
       key: _key,

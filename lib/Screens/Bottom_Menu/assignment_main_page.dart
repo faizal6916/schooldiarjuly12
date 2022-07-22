@@ -17,7 +17,7 @@ class _AssignmentMainScreenState extends State<AssignmentMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfffd5386),menuIndex: 0),
+      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfffd5386),menuIndex: 1),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(
@@ -34,9 +34,7 @@ class _AssignmentMainScreenState extends State<AssignmentMainScreen> {
           children: [
             Downloadables(date: '1',month: 'JUL',details: 'Grade 6 Summer Vacation Homework',topic: 'Dear Students, '
                 'Please find the attachment Enjoy your holidays and spend an hour every day to complete the homework',name: 'RUPA SURENDRAN'),
-            SizedBox(
-              height: 20,
-            ),
+
             Downloadables(date: '15',month: 'APR',details: 'Weekly Update',topic: 'Weekly Update',name: 'IRAM SHAHALAM QURAISHI',)
           ],
         ),
