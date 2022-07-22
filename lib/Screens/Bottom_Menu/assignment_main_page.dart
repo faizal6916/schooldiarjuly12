@@ -5,6 +5,7 @@ import '../../Widgets/bottomNavBar.dart';
 import '../../Widgets/customAppbar.dart';
 import '../../Widgets/downloadables.dart';
 import '../../Widgets/sideBar.dart';
+import '../notifications.dart';
 
 class AssignmentMainScreen extends StatefulWidget {
   const AssignmentMainScreen({Key? key}) : super(key: key);
@@ -18,6 +19,7 @@ class _AssignmentMainScreenState extends State<AssignmentMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: NotificationScreen(),
       bottomNavigationBar: BottomNavBar(
           menuClr: Color(0xffaddcff),
           menuIndex: 1,

@@ -9,6 +9,7 @@ import '../Model/FilterModel/filter_item_nodel.dart';
 import '../Screens/Download/academic_in_downloads.dart';
 import '../Screens/Download/cicular_in_downloads.dart';
 import '../Screens/Download/exam_in_downloads.dart';
+import './notifications.dart';
 
 class DownloadScreen extends StatefulWidget {
   const DownloadScreen({Key? key}) : super(key: key);
@@ -38,6 +39,7 @@ class _DownloadScreenState extends State<DownloadScreen>
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
+        endDrawer: NotificationScreen(),
         bottomNavigationBar: BottomNavBar(
           menuClr: Color(0xfff2f2f2),
           secndClr: Color(0xfff2f2f2),

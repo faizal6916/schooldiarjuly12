@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:school_diary2022/Widgets/bottomNavBar.dart';
 import '../Widgets/sideBar.dart';
 import '../Widgets/customAppbar.dart';
+import './notifications.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         key: _key,
         // appBar: CustomAppBar(name: true,title: 'Home',appHeight: 200,centreText: false,globalKey: _key),
         drawer: SideBar(),
+        endDrawer: NotificationScreen(),
         bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2) ,icnClr: Color(0xff818181)),
         body: Container(
           width: 1.sw,

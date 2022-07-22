@@ -8,6 +8,7 @@ import './Report_Cards/hall_tickets.dart';
 
 import '../Widgets/customAppbar.dart';
 import '../Widgets/sideBar.dart';
+import './notifications.dart';
 
 class ReportScreen extends StatefulWidget {
   const ReportScreen({Key? key}) : super(key: key);
@@ -23,6 +24,7 @@ class _ReportScreenState extends State<ReportScreen> with TickerProviderStateMix
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
+      endDrawer: NotificationScreen(),
       backgroundColor: Colors.grey.shade200,
       bottomNavigationBar: BottomNavBar(menuClr: Color(0xffffc8d1),menuIndex: 4,secndClr: Color(0xfffff6f7),icnClr: Color(0xfffd3a84)),
       drawer: SideBar(),

@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Widgets/bottomNavBar.dart';
 import '../Widgets/customAppbar.dart';
 import '../Widgets/sideBar.dart';
+import './notifications.dart';
 
 class MyProfileScreen extends StatefulWidget {
   const MyProfileScreen({Key? key}) : super(key: key);
@@ -17,6 +18,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        endDrawer: NotificationScreen(),
       bottomNavigationBar: BottomNavBar(
         menuClr: Color(0xfff2f2f2),
         secndClr: Color(0xfff2f2f2),
