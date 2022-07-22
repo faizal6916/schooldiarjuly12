@@ -17,7 +17,11 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(menuClr:Color(0xfff2f2f2)),
+      bottomNavigationBar: BottomNavBar(
+        menuClr: Color(0xfff2f2f2),
+        secndClr: Color(0xfff2f2f2),
+        icnClr: Color(0xff818181),
+      ),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(
@@ -37,14 +41,16 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
             width: 1.sw - 40,
             height: 0.8.sh,
             decoration: BoxDecoration(
-                color: Color(0xffffffff),
-                borderRadius: BorderRadius.all(Radius.circular(15)),boxShadow: [
+              color: Color(0xffffffff),
+              borderRadius: BorderRadius.all(Radius.circular(15)),
+              boxShadow: [
                 BoxShadow(
-                color: Colors.black54,
-                offset: Offset(1, 1),
-                //spreadRadius: 2
-                blurRadius: 5)
-            ],),
+                    color: Colors.black54,
+                    offset: Offset(1, 1),
+                    //spreadRadius: 2
+                    blurRadius: 5)
+              ],
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -56,8 +62,8 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         // Hello,
                         Text(
                           "Hello,",
-                          style:  TextStyle(
-                              color:  Color(0xffe8a420),
+                          style: TextStyle(
+                              color: Color(0xffe8a420),
                               fontWeight: FontWeight.w300,
                               fontFamily: "Axiforma",
                               fontStyle: FontStyle.normal,
@@ -67,15 +73,18 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           text: TextSpan(
                             // Note: Styles for TextSpans must be explicitly defined.
                             // Child text spans will inherit styles from parent
-                            style:  TextStyle(
+                            style: TextStyle(
                               fontSize: 19.sp,
-                                fontWeight: FontWeight.w500,
-                                fontFamily: "Axiforma",
+                              fontWeight: FontWeight.w500,
+                              fontFamily: "Axiforma",
                               color: Color(0xff517bfa),
                             ),
                             children: <TextSpan>[
                               TextSpan(text: 'Donovan'),
-                              TextSpan(text: 'Vargas', style:  TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: 'Vargas',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                             ],
                           ),
                         ),
@@ -89,68 +98,41 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                     ),
                   ],
                 ),
-               SizedBox(
-                 height: 0.02.sh,
-               ),
-               Row(
-                 children: [
-                   Image(image: AssetImage('assets/images/EmailLogo.png'),height: 20,),
-                   SizedBox(
-                     width: 0.02.sw,
-                   ),
-                   Column(
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Text("Email",
-                         style:  TextStyle(
-                             color:   Color(0xff787878),
-                             fontWeight: FontWeight.w400,
-                             fontFamily: "Axiforma",
-                             fontStyle:  FontStyle.normal,
-                             fontSize: 7.sp,
-                           decoration: TextDecoration.underline,
-                         ),),
-                    Text("donovanvargan@gmail.com",
-                      style:  TextStyle(
-                          color:   Color(0xff787878),
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Axiforma",
-                          fontStyle:  FontStyle.normal,
-                          fontSize: 11.sp
-                      ),)
-                     ],
-                   )
-                 ],
-               ),
                 SizedBox(
                   height: 0.02.sh,
                 ),
                 Row(
                   children: [
-                    Image(image: AssetImage('assets/images/ContactLogo.png'),height: 20,),
+                    Image(
+                      image: AssetImage('assets/images/EmailLogo.png'),
+                      height: 20,
+                    ),
                     SizedBox(
                       width: 0.02.sw,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Contact",
-                          style:  TextStyle(
-                            color:   Color(0xff787878),
+                        Text(
+                          "Email",
+                          style: TextStyle(
+                            color: Color(0xff787878),
                             fontWeight: FontWeight.w400,
                             fontFamily: "Axiforma",
-                            fontStyle:  FontStyle.normal,
+                            fontStyle: FontStyle.normal,
                             fontSize: 7.sp,
                             decoration: TextDecoration.underline,
-                          ),),
-                        Text("+91 9876 543 210",
-                          style:  TextStyle(
-                              color:   Color(0xff787878),
+                          ),
+                        ),
+                        Text(
+                          "donovanvargan@gmail.com",
+                          style: TextStyle(
+                              color: Color(0xff787878),
                               fontWeight: FontWeight.w400,
                               fontFamily: "Axiforma",
-                              fontStyle:  FontStyle.normal,
-                              fontSize: 11.sp
-                          ),)
+                              fontStyle: FontStyle.normal,
+                              fontSize: 11.sp),
+                        )
                       ],
                     )
                   ],
@@ -160,32 +142,79 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 ),
                 Row(
                   children: [
-                    Image(image: AssetImage('assets/images/LocationLogo.png'),height: 20,),
+                    Image(
+                      image: AssetImage('assets/images/ContactLogo.png'),
+                      height: 20,
+                    ),
                     SizedBox(
                       width: 0.02.sw,
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text("Address",
-                          style:  TextStyle(
-                            color:   Color(0xff787878),
+                        Text(
+                          "Contact",
+                          style: TextStyle(
+                            color: Color(0xff787878),
                             fontWeight: FontWeight.w400,
                             fontFamily: "Axiforma",
-                            fontStyle:  FontStyle.normal,
+                            fontStyle: FontStyle.normal,
                             fontSize: 7.sp,
                             decoration: TextDecoration.underline,
-                          ),),
+                          ),
+                        ),
+                        Text(
+                          "+91 9876 543 210",
+                          style: TextStyle(
+                              color: Color(0xff787878),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Axiforma",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 11.sp),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 0.02.sh,
+                ),
+                Row(
+                  children: [
+                    Image(
+                      image: AssetImage('assets/images/LocationLogo.png'),
+                      height: 20,
+                    ),
+                    SizedBox(
+                      width: 0.02.sw,
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Address",
+                          style: TextStyle(
+                            color: Color(0xff787878),
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "Axiforma",
+                            fontStyle: FontStyle.normal,
+                            fontSize: 7.sp,
+                            decoration: TextDecoration.underline,
+                          ),
+                        ),
                         Container(
                           width: 0.7.sw,
-                          child: Text("Keas 69 Str. 15234, Chalandri , Athens, Greece",
-                            style:  TextStyle(
-                                color:   Color(0xff787878),
-                                fontWeight: FontWeight.w400,
-                                fontFamily: "Axiforma",
-                                fontStyle:  FontStyle.normal,
-                                fontSize: 11.0.sp,
-                            ),maxLines: 5,),
+                          child: Text(
+                            "Keas 69 Str. 15234, Chalandri , Athens, Greece",
+                            style: TextStyle(
+                              color: Color(0xff787878),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: "Axiforma",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 11.0.sp,
+                            ),
+                            maxLines: 5,
+                          ),
                         ),
                       ],
                     )
@@ -197,15 +226,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 Container(
                     width: 0.7.sw,
                     height: 1,
-                    decoration: BoxDecoration(
-                        color:  Color(0x26c2996e)
-                    )
-                ),
+                    decoration: BoxDecoration(color: Color(0x26c2996e))),
                 SizedBox(
                   height: 0.02.sh,
                 ),
                 Row(
-                  children:[
+                  children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -213,16 +239,19 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           text: TextSpan(
                             // Note: Styles for TextSpans must be explicitly defined.
                             // Child text spans will inherit styles from parent
-                            style:  TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontFamily: "Axiforma",
-                              fontStyle:  FontStyle.normal,
+                              fontStyle: FontStyle.normal,
                               fontSize: 16.sp,
                               color: Color(0xff8829e1),
                             ),
                             children: <TextSpan>[
                               TextSpan(text: 'Marcos'),
-                              TextSpan(text: ' Emmanuel', style:  TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: ' Emmanuel',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                             ],
                           ),
                         ),
@@ -232,24 +261,22 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Row(
                           children: [
                             Text(
-                                "Grade ",
-                                style:  TextStyle(
-                                    color:   Color(0xff949494),
-                                    fontWeight: FontWeight.w400,
-                                    fontFamily: "Axiforma",
-                                    fontStyle:  FontStyle.normal,
-                                    fontSize: 10.1.sp
-                                ),
+                              "Grade ",
+                              style: TextStyle(
+                                  color: Color(0xff949494),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "Axiforma",
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.1.sp),
                             ),
                             Text(
                               "7B ",
-                              style:  TextStyle(
-                                  color:   Color(0xff949494),
+                              style: TextStyle(
+                                  color: Color(0xff949494),
                                   fontWeight: FontWeight.w400,
                                   fontFamily: "Axiforma",
-                                  fontStyle:  FontStyle.normal,
-                                  fontSize: 10.1.sp
-                              ),
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.1.sp),
                             ),
                           ],
                         ),
@@ -259,29 +286,25 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                         Row(
                           children: [
                             Text(
-                                "Good Attendance",
-                                style:  TextStyle(
-                                    color:   Color(0xffe8a420),
-                                    fontWeight: FontWeight.w400,
-                                    fontFamily: "Axiforma",
-                                    fontStyle:  FontStyle.normal,
-                                    fontSize: 10.1.sp
-                                ),
+                              "Good Attendance",
+                              style: TextStyle(
+                                  color: Color(0xffe8a420),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: "Axiforma",
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.1.sp),
                             ),
                             SizedBox(
                               width: 0.02.sw,
                             ),
-                            Text(
-                                "80%",
-                                style:  TextStyle(
-                                    color:   Color(0xffe8a420),
+                            Text("80%",
+                                style: TextStyle(
+                                    color: Color(0xffe8a420),
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "Axiforma",
-                                    fontStyle:  FontStyle.normal,
-                                    fontSize: 10.1.sp
-                                ),
-                                textAlign: TextAlign.left
-                            )
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 10.1.sp),
+                                textAlign: TextAlign.left)
                           ],
                         ),
                       ],
@@ -298,15 +321,12 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                 Container(
                     width: 0.7.sw,
                     height: 1,
-                    decoration: BoxDecoration(
-                        color:  Color(0x26c2996e)
-                    )
-                ),
+                    decoration: BoxDecoration(color: Color(0x26c2996e))),
                 SizedBox(
                   height: 0.02.sh,
                 ),
                 Row(
-                  children:[
+                  children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -314,16 +334,19 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           text: TextSpan(
                             // Note: Styles for TextSpans must be explicitly defined.
                             // Child text spans will inherit styles from parent
-                            style:  TextStyle(
+                            style: TextStyle(
                               fontWeight: FontWeight.w500,
                               fontFamily: "Axiforma",
-                              fontStyle:  FontStyle.normal,
+                              fontStyle: FontStyle.normal,
                               fontSize: 16.sp,
                               color: Color(0xff8829e1),
                             ),
                             children: <TextSpan>[
                               TextSpan(text: 'Angelina '),
-                              TextSpan(text: ' Figueroa', style:  TextStyle(fontWeight: FontWeight.bold)),
+                              TextSpan(
+                                  text: ' Figueroa',
+                                  style:
+                                      TextStyle(fontWeight: FontWeight.bold)),
                             ],
                           ),
                         ),
@@ -334,23 +357,21 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           children: [
                             Text(
                               "Grade ",
-                              style:  TextStyle(
-                                  color:   Color(0xff949494),
+                              style: TextStyle(
+                                  color: Color(0xff949494),
                                   fontWeight: FontWeight.w400,
                                   fontFamily: "Axiforma",
-                                  fontStyle:  FontStyle.normal,
-                                  fontSize: 10.1.sp
-                              ),
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.1.sp),
                             ),
                             Text(
                               "7B ",
-                              style:  TextStyle(
-                                  color:   Color(0xff949494),
+                              style: TextStyle(
+                                  color: Color(0xff949494),
                                   fontWeight: FontWeight.w400,
                                   fontFamily: "Axiforma",
-                                  fontStyle:  FontStyle.normal,
-                                  fontSize: 10.1.sp
-                              ),
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.1.sp),
                             ),
                           ],
                         ),
@@ -361,28 +382,24 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                           children: [
                             Text(
                               "Good Attendance",
-                              style:  TextStyle(
-                                  color:   Color(0xffe8a420),
+                              style: TextStyle(
+                                  color: Color(0xffe8a420),
                                   fontWeight: FontWeight.w400,
                                   fontFamily: "Axiforma",
-                                  fontStyle:  FontStyle.normal,
-                                  fontSize: 10.1.sp
-                              ),
+                                  fontStyle: FontStyle.normal,
+                                  fontSize: 10.1.sp),
                             ),
                             SizedBox(
                               width: 0.02.sw,
                             ),
-                            Text(
-                                "80%",
-                                style:  TextStyle(
-                                    color:   Color(0xffe8a420),
+                            Text("80%",
+                                style: TextStyle(
+                                    color: Color(0xffe8a420),
                                     fontWeight: FontWeight.w500,
                                     fontFamily: "Axiforma",
-                                    fontStyle:  FontStyle.normal,
-                                    fontSize: 10.1.sp
-                                ),
-                                textAlign: TextAlign.left
-                            )
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 10.1.sp),
+                                textAlign: TextAlign.left)
                           ],
                         ),
                       ],
@@ -422,7 +439,6 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
           // )
         ],
       ),
-      
     );
   }
 }

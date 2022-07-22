@@ -10,15 +10,10 @@ class AcademinInDownload extends StatelessWidget {
     return Container(
       width: 1.sw - 40,
       //height: 1.sh/2 + 300,
-      padding: EdgeInsets.all(20),
+     // padding: EdgeInsets.all(20),
       color: Colors.grey.shade200,
       child: ListView(
         children: [
-         ShowReportCard(
-           headText: 'Friday Shedule',
-           typeOfReport: 'Circular',
-           reportDate: '22-08-1995',
-         ),
           ShowReportCard(
             headText: 'Friday Shedule',
             typeOfReport: 'Circular',
@@ -28,7 +23,21 @@ class AcademinInDownload extends StatelessWidget {
             headText: 'Friday Shedule',
             typeOfReport: 'Circular',
             reportDate: '22-08-1995',
-          )
+          ),
+          ShowReportCard(
+            headText: 'Friday Shedule',
+            typeOfReport: 'Circular',
+            reportDate: '22-08-1995',
+          ),
+          ShowReportCard(
+            headText: 'Friday Shedule',
+            typeOfReport: 'Circular',
+            reportDate: '22-08-1995',
+          ),
+
+
+
+
         ],
       ),
     );

@@ -2,13 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class BottomNavBar extends StatefulWidget {
+  final Color secndClr;
   final Color menuClr;
+  final Color icnClr;
   final int? menuIndex;
 
-  const BottomNavBar({Key? key,
-    required this.menuClr,
-    this.menuIndex
-  }) : super(key: key);
+  const BottomNavBar(
+      {Key? key,
+      required this.menuClr,
+      required this.secndClr,
+      this.menuIndex,
+      required this.icnClr})
+      : super(key: key);
 
   @override
   State<BottomNavBar> createState() => _BottomNavBarState();
@@ -17,33 +22,35 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int? _selctedIndex;
 
-  void _selectedMenu ({required BuildContext context,required int index}){
-    switch(index) {
+  void _selectedMenu({required BuildContext context, required int index}) {
+    switch (index) {
       case 0:
         Navigator.pushNamed(context, '/circularmain');
-      break;
+        break;
       case 1:
         Navigator.pushNamed(context, '/assignmentmain');
-      break;
+        break;
       case 2:
         Navigator.pushNamed(context, '/calendarmain');
-      break;
+        break;
       case 3:
         Navigator.pushNamed(context, '/feemain');
-      break;
+        break;
       case 4:
         Navigator.pushNamed(context, '/report');
-      break;
+        break;
       default:
         throw Error();
     }
   }
+
   @override
   void initState() {
     // TODO: implement initState
     _selctedIndex == widget.menuIndex;
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -63,45 +70,50 @@ class _BottomNavBarState extends State<BottomNavBar> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           bottomMenuItem(
-            menuIcon: Icons.campaign_outlined,
-            menuName: 'Circular',
-            //onTapColor: Color(0xfffd5386),
+              menuIcon: Icons.campaign_outlined,
+              menuName: 'Circular',
+              //onTapColor: Color(0xfffd5386),
               onTapColor: widget.menuClr,
-            indexNo: 0,
-            context: context
-          ),
+              onTapScndclr: widget.secndClr,
+              onTapIcnClr: widget.icnClr,
+              indexNo: 0,
+              context: context),
           bottomMenuItem(
-            menuIcon: Icons.menu_book_outlined,
-            menuName: 'Assignment',
-            //onTapColor: Color(0xff4966ff),
+              menuIcon: Icons.menu_book_outlined,
+              menuName: 'Assignment',
+              //onTapColor: Color(0xff4966ff),
               onTapColor: widget.menuClr,
-            indexNo: 1,
-              context: context
-          ),
+              onTapScndclr: widget.secndClr,
+              onTapIcnClr: widget.icnClr,
+              indexNo: 1,
+              context: context),
           bottomMenuItem(
-            menuIcon: Icons.calendar_month_outlined,
-            menuName: 'Calendar',
-            //onTapColor: Color(0xffbb49ff),
+              menuIcon: Icons.calendar_month_outlined,
+              menuName: 'Calendar',
+              //onTapColor: Color(0xffbb49ff),
               onTapColor: widget.menuClr,
-            indexNo: 2,
-              context: context
-          ),
+              onTapScndclr: widget.secndClr,
+              onTapIcnClr: widget.icnClr,
+              indexNo: 2,
+              context: context),
           bottomMenuItem(
-            menuIcon: Icons.payments_outlined,
-            menuName: 'Fee',
-            //onTapColor: Color(0xff00b59c),
+              menuIcon: Icons.payments_outlined,
+              menuName: 'Fee',
+              //onTapColor: Color(0xff00b59c),
               onTapColor: widget.menuClr,
-            indexNo: 3,
-              context: context
-          ),
+              onTapScndclr: widget.secndClr,
+              onTapIcnClr: widget.icnClr,
+              indexNo: 3,
+              context: context),
           bottomMenuItem(
-            menuIcon: Icons.pie_chart,
-            menuName: 'Assessments',
-            //onTapColor: Color(0xfffd5386),
+              menuIcon: Icons.pie_chart,
+              menuName: 'Assessments',
+              //onTapColor: Color(0xfffd5386),
               onTapColor: widget.menuClr,
-            indexNo: 4,
-              context: context
-          )
+              onTapScndclr: widget.secndClr,
+              onTapIcnClr: widget.icnClr,
+              indexNo: 4,
+              context: context)
         ],
       ),
     );
@@ -112,6 +124,8 @@ class _BottomNavBarState extends State<BottomNavBar> {
     required IconData menuIcon,
     required String menuName,
     required Color onTapColor,
+    required Color onTapScndclr,
+    required Color onTapIcnClr,
     required BuildContext context,
   }) =>
       InkWell(
@@ -123,7 +137,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
             print(indexNo);
             print('selected index${_selctedIndex}');
           });
-          _selectedMenu(context: context,index: indexNo);
+          _selectedMenu(context: context, index: indexNo);
         },
         child: Container(
           //padding: EdgeInsets.all(4),
@@ -132,16 +146,37 @@ class _BottomNavBarState extends State<BottomNavBar> {
           //color: Colors.red,
           child: Column(
             children: [
-              CircleAvatar(
-                radius: 20,
-                backgroundColor:
-                    //_selctedIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
-                widget.menuIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
-                //_selctedIndex == indexNo ? Color(0xfff2f2f2) : onTapColor,
+              // CircleAvatar(
+              //   radius: 20,
+              //   backgroundColor:
+              //       //_selctedIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
+              //   widget.menuIndex == indexNo ? onTapColor : Color(0xfff2f2f2),
+              //   //_selctedIndex == indexNo ? Color(0xfff2f2f2) : onTapColor,
+              //   child: Icon(
+              //     menuIcon,
+              //     color: widget.menuIndex == indexNo
+              //         ? Colors.white
+              //         : Color(0xff818181),
+              //   ),
+              // ),
+              Container(
+                width: 50,
+                height: 50,
+                decoration: BoxDecoration(
+                  // color: Color(0xff818181),
+                  borderRadius: BorderRadius.circular(25),
+                  gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: widget.menuIndex == indexNo
+                        ? [onTapColor, onTapScndclr]
+                        : [Color(0xfff2f2f2), Color(0xfff2f2f2)],
+                  ),
+                ),
                 child: Icon(
                   menuIcon,
                   color: widget.menuIndex == indexNo
-                      ? Colors.white
+                      ? onTapIcnClr
                       : Color(0xff818181),
                 ),
               ),

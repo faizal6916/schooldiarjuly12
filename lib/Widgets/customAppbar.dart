@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final GlobalKey<ScaffoldState> globalKey;
@@ -81,9 +82,159 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   alignment: Alignment.bottomCenter)),
         ),
         actions: [
-          Container(),
+          //Container(),
+          InkWell(
+            onTap: () {
+              _selectChildPopUp(context: context);
+            },
+            child: Container(
+              margin: EdgeInsets.only(right: 10, top: 10),
+              child: CircleAvatar(
+                radius: 22,
+                backgroundColor: Colors.white,
+                child: CircleAvatar(
+                  radius: 20,
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(60),
+                    child: CachedNetworkImage(
+                      imageUrl:
+                          'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80',
+                      placeholder: (context, url) => SizedBox(
+                        width: 20,
+                        height: 20,
+                        child: CircularProgressIndicator(),
+                      ),
+                      errorWidget: (context, url, error) => Image.asset(
+                        'assets/images/userImage.png',
+                        width: 20,
+                        height: 20,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
+
+  _selectChildPopUp({
+    required BuildContext context,
+  }) =>
+      showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text('Select child',style: TextStyle(
+            fontSize: 16.sp
+          ),),
+          actions: [
+            singleChildDetail(
+                name: 'MarkBoucherMarkBoucherMarkBoucher',
+                admnNo: '6916',
+                grade: '6H'),
+            singleChildDetail(
+                name: 'MarkBoucherMarkBoucherMarkBoucher',
+                admnNo: '6916',
+                grade: '6H')
+          ],
+        ),
+      );
+
+  Widget singleChildDetail(
+          {required String name,
+          required String admnNo,
+          required String grade}) =>
+      Container(
+        width: double.infinity,
+        height: 120,
+        margin: EdgeInsets.only(bottom: 10),
+        decoration: BoxDecoration(
+          color: Colors.grey.shade100,
+          borderRadius: BorderRadius.circular(15)
+        ),
+        padding: EdgeInsets.all(8),
+        child: Row(
+          children: [
+            CircleAvatar(
+              radius: 30,
+              backgroundColor: Colors.purple,
+              child: CircleAvatar(
+                radius: 28,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(60),
+                  child: CachedNetworkImage(
+                    imageUrl:
+                    'https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80',
+                    placeholder: (context, url) => SizedBox(
+                      width: 20,
+                      height: 20,
+                      child: CircularProgressIndicator(),
+                    ),
+                    errorWidget: (context, url, error) => Image.asset(
+                      'assets/images/userImage.png',
+                      width: 20,
+                      height: 20,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
+            Container(
+              width: 140,
+              height: 90,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      color: const Color(0xff34378b),
+                      fontWeight: FontWeight.w700,
+                      fontFamily: "Axiforma",
+                      fontSize: 13.sp,
+                    ),
+                  ),
+                  Container(
+                    width: 130,
+                    height: 18,
+                    padding: EdgeInsets.symmetric(horizontal: 6),
+                    decoration: BoxDecoration(
+                        color: Color(0xffececf9),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Text(
+                      'ADMN NO : ${admnNo}',
+                      style: admissionAndgrdStyle(),
+                    ),
+                  ),
+                  SizedBox(height: 5,),
+                  Container(
+                    width: 130,
+                    height: 18,
+                    padding: EdgeInsets.symmetric(horizontal: 6),
+                    decoration: BoxDecoration(
+                        color: Color(0xffececf9),
+                        borderRadius: BorderRadius.circular(15)),
+                    child: Text(
+                      'Grade : ${grade}',
+                      style: admissionAndgrdStyle(),
+                    ),
+                  ),
+                ],
+              ),
+            )
+          ],
+        ),
+      );
+  admissionAndgrdStyle() => TextStyle(
+      color: Color(0xff34378b).withOpacity(0.5),
+      fontWeight: FontWeight.w400,
+      fontFamily: "Axiforma",
+      fontSize: 12.sp);
 }

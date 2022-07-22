@@ -23,7 +23,7 @@ class SideBar extends StatelessWidget {
                   ),
                   buildHeader(
                       urlImage:
-                      'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                          'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
                       name: 'Christopher Howard',
                       email: 'how@gamil.com'),
                   SizedBox(
@@ -91,7 +91,6 @@ class SideBar extends StatelessWidget {
                 ],
               ),
             ),
-
             Container(
               width: double.infinity,
               height: 200,
@@ -109,23 +108,98 @@ class SideBar extends StatelessWidget {
                       image: AssetImage('assets/images/dubai.png'),
                     ),
                   ),
-                  Divider(thickness: 2,color: Colors.black54,),
+                  Divider(
+                    thickness: 2,
+                    color: Colors.black54,
+                  ),
                   Row(
                     children: [
-                      SizedBox(width: 5,),
                       SizedBox(
-                        width: 100,
-                        child: Row(
-                          children: [
-                            Icon(Icons.arrow_circle_left_outlined),
-                            SizedBox(width: 5,),
-                            Text('Log Out')
-                          ],
+                        width: 5,
+                      ),
+                      InkWell(
+                        onTap: () {
+                          showDialog(
+                              context: context,
+                              builder: (_) => AlertDialog(
+                                    title: Center(
+                                      child: Text(
+                                        'Logout',
+                                        style: TextStyle(
+                                          color: Color(0xfffc5c65),
+                                          fontSize: 16.sp,
+                                          fontFamily: 'Axiforma',
+                                          fontWeight: FontWeight.w700,
+                                        ),
+                                      ),
+                                    ),
+                                    content: Container(
+                                      width: double.infinity,
+                                      height: 20,
+                                      child: Center(
+                                        child:
+                                            Text('Are you sure want to Logout'),
+                                      ),
+                                    ),
+                                    actions: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          ElevatedButton(
+                                            onPressed: () {},
+                                            style: ElevatedButton.styleFrom(
+                                              elevation: 0,
+                                              primary: Color(0xff8e2de2),
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(15),
+                                              ),
+                                            ),
+                                            child: Text('Yes'),
+                                          ),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          ElevatedButton(
+                                              style: ElevatedButton.styleFrom(
+                                                elevation: 0,
+                                                primary: Colors.grey,
+                                                shape: RoundedRectangleBorder(
+                                                  borderRadius:
+                                                      BorderRadius.circular(15),
+                                                ),
+                                              ),
+                                              onPressed: () {
+                                                Navigator.of(context).pop();
+                                              },
+                                              child: Text('No'))
+                                        ],
+                                      )
+                                    ],
+                                  ));
+                        },
+                        child: SizedBox(
+                          width: 100,
+                          child: Row(
+                            children: [
+                              Icon(
+                                Icons.arrow_circle_left_outlined,
+                                color: Color(0xfffc5c65),
+                              ),
+                              SizedBox(
+                                width: 5,
+                              ),
+                              Text('Log Out')
+                            ],
+                          ),
                         ),
                       ),
-                      SizedBox(width: 5,),
+                      SizedBox(
+                        width: 5,
+                      ),
                       InkWell(
-                        onTap: (){
+                        onTap: () {
                           Navigator.of(context).pop();
                           Navigator.pushNamed(context, '/resetpassword');
                         },
@@ -134,7 +208,9 @@ class SideBar extends StatelessWidget {
                           child: Row(
                             children: [
                               Icon(Icons.lock),
-                              SizedBox(width: 5,),
+                              SizedBox(
+                                width: 5,
+                              ),
                               Text('Reset password')
                             ],
                           ),

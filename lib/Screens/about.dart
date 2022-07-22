@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../Widgets/bottomNavBar.dart';
 import '../Widgets/sideBar.dart';
 import '../Widgets/customAppbar.dart';
@@ -13,10 +14,22 @@ class AboutSceen extends StatefulWidget {
 
 class _AboutSceenState extends State<AboutSceen> {
   GlobalKey<ScaffoldState> _key = GlobalKey();
+  final Uri _url = Uri.parse('https://www.youtube.com/watch?v=Xaq-zb5Vizk');
+
+  //--------------------------------Youtube Launcher--------------------------//
+  Future<void> _launchUrl() async {
+    if (!await launchUrl(_url)) {
+      throw 'Could not launch $_url';
+    }
+  }
+  //--------------------------End of Youtube Launcher-------------------------//
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
+      bottomNavigationBar: BottomNavBar(
+          menuClr: Color(0xfff2f2f2),
+          secndClr: Color(0xfff2f2f2),
+          icnClr: Color(0xff818181)),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(
@@ -31,7 +44,7 @@ class _AboutSceenState extends State<AboutSceen> {
             children: [
               Container(
                 width: 1.sw,
-                height: 1.sh+50,
+                height: 1.sh + 50,
                 //color: Colors.red,
               ),
               Positioned(
@@ -39,9 +52,11 @@ class _AboutSceenState extends State<AboutSceen> {
                 child: Container(
                   width: 1.sw,
                   decoration: BoxDecoration(
-                      image: DecorationImage(image: AssetImage('assets/images/about_us_bg.png'))
-                  ),
-                  child: Image.asset('assets/images/play_button.png'),
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/about_us_bg.png'))),
+                  child: InkWell(
+                      onTap: _launchUrl,
+                      child: Image.asset('assets/images/play_button.png')),
                 ),
               ),
               Positioned(
@@ -82,7 +97,11 @@ class _AboutSceenState extends State<AboutSceen> {
                         height: 0.03.sh,
                       ),
                       //Image
-                      Image(image: AssetImage('assets/images/Logo2.png'),height: 0.07.sh,),
+                      Image(
+                        image: AssetImage('assets/images/Logo2.png'),
+                        height: 50,
+                        width: 200,
+                      ),
                       SizedBox(
                         height: 0.03.sh,
                       ),
@@ -162,7 +181,8 @@ class _AboutSceenState extends State<AboutSceen> {
                                   width: 10,
                                   height: 10,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(1)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(1)),
                                       color: Color(0xfff7993b)))),
                           SizedBox(
                             width: 0.018.sw,
@@ -190,7 +210,8 @@ class _AboutSceenState extends State<AboutSceen> {
                                   width: 10,
                                   height: 10,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(1)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(1)),
                                       color: Color(0xfff7993b)))),
                           SizedBox(
                             width: 0.018.sw,
@@ -218,7 +239,8 @@ class _AboutSceenState extends State<AboutSceen> {
                                   width: 10,
                                   height: 10,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(1)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(1)),
                                       color: Color(0xfff7993b)))),
                           SizedBox(
                             width: 0.018.sw,
@@ -241,14 +263,15 @@ class _AboutSceenState extends State<AboutSceen> {
                       Row(
                         children: [
                           Padding(
-                            padding:  EdgeInsets.only(bottom: 15),
+                            padding: EdgeInsets.only(bottom: 15),
                             child: Transform.rotate(
                                 angle: 4,
                                 child: Container(
                                     width: 10,
                                     height: 10,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(1)),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(1)),
                                         color: Color(0xfff7993b)))),
                           ),
                           SizedBox(
@@ -275,14 +298,15 @@ class _AboutSceenState extends State<AboutSceen> {
                       Row(
                         children: [
                           Padding(
-                            padding:  EdgeInsets.only(bottom: 15),
+                            padding: EdgeInsets.only(bottom: 15),
                             child: Transform.rotate(
                                 angle: 4,
                                 child: Container(
                                     width: 10,
                                     height: 10,
                                     decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.all(Radius.circular(1)),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(1)),
                                         color: Color(0xfff7993b)))),
                           ),
                           SizedBox(
@@ -314,7 +338,8 @@ class _AboutSceenState extends State<AboutSceen> {
                                   width: 10,
                                   height: 10,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(1)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(1)),
                                       color: Color(0xfff7993b)))),
                           SizedBox(
                             width: 0.018.sw,
@@ -342,7 +367,8 @@ class _AboutSceenState extends State<AboutSceen> {
                                   width: 10,
                                   height: 10,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.all(Radius.circular(1)),
+                                      borderRadius:
+                                          BorderRadius.all(Radius.circular(1)),
                                       color: Color(0xfff7993b)))),
                           SizedBox(
                             width: 0.018.sw,
@@ -365,7 +391,6 @@ class _AboutSceenState extends State<AboutSceen> {
               )
             ],
           )
-
         ],
       ),
     );

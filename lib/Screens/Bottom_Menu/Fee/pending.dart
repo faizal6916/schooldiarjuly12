@@ -10,7 +10,7 @@ class PendingFee extends StatelessWidget {
     return Container(
       width: 1.sw - 80,
       //height: 1.sh/2 + 300,
-      padding: EdgeInsets.all(20),
+      //padding: EdgeInsets.all(20),
       color: Colors.grey.shade200,
       child: Stack(
         children: [
@@ -24,19 +24,22 @@ class PendingFee extends StatelessWidget {
           ),
           Positioned(
             bottom: 0,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                minimumSize: Size(1.sw-40, 50),
-                primary: Color(0xff24c272),
-                padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10)
+            child: Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(1.sw-24, 50),
+                  primary: Color(0xff24c272),
+                  //padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10)
+                ),
+                onPressed: () {},
+                child: Text('MAKE PAYMENT',style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16.sp,
+                  fontWeight: FontWeight.w700,
+                  fontFamily: 'Axiforma'
+                ),),
               ),
-              onPressed: () {},
-              child: Text('MAKE PAYMENT',style: TextStyle(
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w700,
-                fontFamily: 'Axiforma'
-              ),),
             ),
           ),
 

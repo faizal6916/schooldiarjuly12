@@ -23,7 +23,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         key: _key,
         // appBar: CustomAppBar(name: true,title: 'Home',appHeight: 200,centreText: false,globalKey: _key),
         drawer: SideBar(),
-        bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
+        bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2) ,icnClr: Color(0xff818181)),
         body: Container(
           width: 1.sw,
           height: 1.sh,
@@ -36,7 +36,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   centreText: false,
                   globalKey: _key),
               Positioned(
-                top: 100,
+                top: 0.15.sh-10,
                   //alignment: Alignment(0, -0.65),
                   child: nameCard(
                       grade: 'Grade 12B',
