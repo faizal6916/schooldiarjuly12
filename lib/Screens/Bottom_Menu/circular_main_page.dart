@@ -32,7 +32,7 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
         width: 1.sw,
 
         height: 1.sh - 220,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
 
         child: ListView(
           children: [
