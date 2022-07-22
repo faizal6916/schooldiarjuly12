@@ -24,6 +24,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
+      //backgroundColor: Colors.grey.shade200,
       endDrawer: NotificationScreen(),
       bottomNavigationBar: BottomNavBar(
         menuClr: Color(0xffbb49ff),
@@ -236,8 +237,10 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                       child: ListView(
                         children: [
                           eventShow(
-                              bgColr: Color(0xfff7d794),
-                              fgColr: Color(0xfff7d794).withOpacity(0.3))
+                            bgColr: Color(0xfff7d794),
+                            fgColr: Color(0xfff7d794).withOpacity(0.3),
+                          ),
+                          eventShow(bgColr: Color(0xff19a2a0), fgColr: Color(0xff19a2a0).withOpacity(0.3))
                         ],
                       )),
                   Center(child: Text('No upcoming Events')),
@@ -439,16 +442,20 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                 ),
               ),
               child: Column(
+                //mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('24 December 2020',style: TextStyle(
-                          color:  bgColr,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: "Axiforma",
-                          fontSize: 11.sp
-                      ),),
+                      Text(
+                        '24 December 2020',
+                        style: TextStyle(
+                            color: bgColr,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: "Axiforma",
+                            fontSize: 11.sp),
+                      ),
                       Container(
                         width: 100,
                         height: 28,
@@ -463,16 +470,29 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                             //   offset: Offset(0.5,0.5)
                             //
                             // )
-                          ]
+                          ],
                         ),
-                        child: Center(child: Text('3A English',style: TextStyle(
-                            color:  bgColr,
-                            fontWeight: FontWeight.w400,
-                            fontFamily: "Axiforma",
-                            fontSize: 11.sp
-                        ),),),
-                      )
+                        child: Center(
+                          child: Text(
+                            '3A English',
+                            style: TextStyle(
+                                color: bgColr,
+                                fontWeight: FontWeight.w400,
+                                fontFamily: "Axiforma",
+                                fontSize: 11.sp),
+                          ),
+                        ),
+                      ),
                     ],
+                  ),
+                  Text(
+                    'Christmas Holiday',
+                    style: TextStyle(
+                        color: Color(0xff4c4c4c),
+                        fontWeight: FontWeight.w500,
+                        fontFamily: "Axiforma",
+                        fontStyle: FontStyle.normal,
+                        fontSize: 18.sp),
                   )
                 ],
               ),

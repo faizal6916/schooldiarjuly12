@@ -33,7 +33,8 @@ class _DownloadablesState extends State<Downloadables> {
       },
       child: Container(
         width: 1.sw,
-        height: isExpanded ? 300 : 100,
+        height: isExpanded ? 340 : 100,
+        margin: EdgeInsets.symmetric( vertical: 10),
         // padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: Colors.white,
@@ -50,6 +51,7 @@ class _DownloadablesState extends State<Downloadables> {
         child: Column(
           children: [
             Container(
+
               padding: EdgeInsets.fromLTRB(7, 0, 4, 0),
               width: 1.sw,
               height: 100,
@@ -96,7 +98,7 @@ class _DownloadablesState extends State<Downloadables> {
             isExpanded
             ?Container(
               padding: EdgeInsets.fromLTRB(50, 15, 20, 10),
-               height: 200,
+               height: 240,
               width: 1.sw,
               decoration: BoxDecoration(  border: Border(top: BorderSide(color: Colors.grey)),),
               child: Column(

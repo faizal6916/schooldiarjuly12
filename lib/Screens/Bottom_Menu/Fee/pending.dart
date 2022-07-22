@@ -19,13 +19,14 @@ class PendingFee extends StatelessWidget {
               PendingFeeWidget(),
               PendingFeeWidget(),
               PendingFeeWidget(),
+
             ],
           ),
           Positioned(
             bottom: 0,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                minimumSize: Size(1.sw, 50),
+                minimumSize: Size(1.sw-40, 50),
                 primary: Color(0xff24c272),
                 padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10)
               ),

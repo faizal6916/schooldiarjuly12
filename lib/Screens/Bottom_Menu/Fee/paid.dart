@@ -15,8 +15,7 @@ class PaidFee extends StatelessWidget {
       color: Colors.grey.shade200,
       child: ListView(
         children: [
-          PaidFeeWidget(),
-          PaidFeeWidget(),
+
           PaidFeeWidget(),
           PaidFeeWidget(),
 
