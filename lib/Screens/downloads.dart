@@ -38,7 +38,11 @@ class _DownloadScreenState extends State<DownloadScreen>
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 3, vsync: this);
     return Scaffold(
-        bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
+        bottomNavigationBar: BottomNavBar(
+          menuClr: Color(0xfff2f2f2),
+          secndClr: Color(0xfff2f2f2),
+          icnClr: Color(0xff818181),
+        ),
         backgroundColor: Colors.grey.shade200,
         drawer: SideBar(),
         key: _key,
@@ -55,7 +59,7 @@ class _DownloadScreenState extends State<DownloadScreen>
             ),
             Container(
               width: 1.sw,
-              height: 50,
+              height: 40,
               //margin: EdgeInsets.symmetric(vertical: 10),
               //margin: EdgeInsets.only(top: 15),
               padding: EdgeInsets.symmetric(horizontal: 10),
@@ -118,7 +122,7 @@ class _DownloadScreenState extends State<DownloadScreen>
             ),
             Container(
               width: 1.sw,
-              height: 1.sh -350,
+              height: 1.sh -305,
               child: TabBarView(
                 controller: _tabController,
                 children: [

@@ -27,7 +27,9 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
       //backgroundColor: Colors.grey.shade200,
       endDrawer: NotificationScreen(),
       bottomNavigationBar: BottomNavBar(
-        menuClr: Color(0xffbb49ff),
+        menuClr: Color(0xffffbef9),
+        secndClr: Color(0xfffff1ff),
+        icnClr: Color(0xffa93aff),
         menuIndex: 2,
       ),
       drawer: SideBar(),
@@ -44,150 +46,165 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: ListView(
           children: [
-            SizedBox(
-              height: 0.5.sh,
-              child: TableCalendar(
-                focusedDay: DateTime.now(),
-                firstDay: DateTime(2010),
-                lastDay: DateTime(2050),
-                calendarFormat: _format,
-                onFormatChanged: (CalendarFormat format) {
-                  setState(() {
-                    _format = format;
-                  });
-                },
-                selectedDayPredicate: (day) {
-                  return isSameDay(_selectedDay, day);
-                },
-                onDaySelected: (selectedDay, focusedDay) {
-                  setState(() {
-                    _selectedDay = selectedDay;
-                    _focusedDay =
-                        focusedDay; // update `_focusedDay` here as well
-                  });
-                },
-                headerStyle: HeaderStyle(
-                  formatButtonVisible: false,
-                  titleCentered: true,
-                  // decoration: BoxDecoration(
-                  //   color: Color(0xff34378b)
-                  // )
-                  titleTextStyle: TextStyle(
-                    fontFamily: 'Axiforma',
-                    color: Color(0xff34378b),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  leftChevronIcon: Icon(
-                    Icons.arrow_left_outlined,
-                    color: Color(0xff34378b),
-                  ),
-                  rightChevronIcon: Icon(
-                    Icons.arrow_right_outlined,
-                    color: Color(0xff34378b),
-                  ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+
+                height: 400,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                  borderRadius: BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15))
                 ),
-                daysOfWeekStyle: DaysOfWeekStyle(
-                  weekendStyle: TextStyle(
-                    fontFamily: 'Axiforma',
-                    color: Color(0xff34378b).withOpacity(0.5),
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w400,
+                child: TableCalendar(
+                  //shouldFillViewport: true,
+                  //pageJumpingEnabled: false,
+
+                  focusedDay: DateTime.now(),
+                  firstDay: DateTime(2010),
+                  lastDay: DateTime(2050),
+                  calendarFormat: _format,
+                  onFormatChanged: (CalendarFormat format) {
+                    setState(() {
+                      _format = format;
+                    });
+                  },
+                  selectedDayPredicate: (day) {
+                    return isSameDay(_selectedDay, day);
+                  },
+                  onDaySelected: (selectedDay, focusedDay) {
+                    setState(() {
+                      _selectedDay = selectedDay;
+                      _focusedDay =
+                          focusedDay; // update `_focusedDay` here as well
+                    });
+                  },
+                  headerStyle: HeaderStyle(
+                    formatButtonVisible: false,
+                    titleCentered: true,
+                    // decoration: BoxDecoration(
+                    //   color: Color(0xff34378b)
+                    // )
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff34378b),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    leftChevronIcon: Icon(
+                      Icons.arrow_left_outlined,
+                      color: Color(0xff34378b),
+                    ),
+                    rightChevronIcon: Icon(
+                      Icons.arrow_right_outlined,
+                      color: Color(0xff34378b),
+                    ),
                   ),
-                  weekdayStyle: TextStyle(
-                    fontFamily: 'Axiforma',
-                    color: Color(0xff34378b).withOpacity(0.5),
-                    fontSize: 13.sp,
-                    fontWeight: FontWeight.w400,
+                  daysOfWeekStyle: DaysOfWeekStyle(
+                    weekendStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff34378b).withOpacity(0.5),
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    weekdayStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff34378b).withOpacity(0.5),
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w400,
+                    ),
                   ),
-                ),
-                calendarStyle: CalendarStyle(
-                  holidayTextStyle: TextStyle(
-                    fontFamily: 'Axiforma',
-                    color: Color(0xfffc5c65),
-                    fontSize: 19,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  defaultTextStyle: TextStyle(
-                    fontFamily: 'Axiforma',
-                    color: Color(0xff5c5c5c),
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
-                  ),
-                  weekendTextStyle: TextStyle(
-                    fontFamily: 'Axiforma',
-                    color: Color(0xfffc5c65),
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w600,
+                  calendarStyle: CalendarStyle(
+                    holidayTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xfffc5c65),
+                      fontSize: 19,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    defaultTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff5c5c5c),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    weekendTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xfffc5c65),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
                   ),
                 ),
               ),
             ),
-            Container(
-              width: double.infinity,
-              height: 50,
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Container(
-                    width: 80,
-                    //color: Colors.yellow,
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 2,
-                          backgroundColor: Color(0xfffed330),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Events',
-                          style: eventTextStyle(),
-                        )
-                      ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                width: double.infinity,
+                height: 50,
+                color: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      width: 80,
+                      //color: Colors.yellow,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 2,
+                            backgroundColor: Color(0xfffed330),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Events',
+                            style: eventTextStyle(),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: 80,
-                    //color: Colors.pink,
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 2,
-                          backgroundColor: Color(0xff5fd2d0),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Exams',
-                          style: eventTextStyle(),
-                        )
-                      ],
+                    Container(
+                      width: 80,
+                      //color: Colors.pink,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 2,
+                            backgroundColor: Color(0xff5fd2d0),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Exams',
+                            style: eventTextStyle(),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  Container(
-                    width: 80,
-                    // color: Colors.purple,
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 2,
-                          backgroundColor: Color(0xfffc5c65),
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Text(
-                          'Absent',
-                          style: eventTextStyle(),
-                        )
-                      ],
-                    ),
-                  )
-                ],
+                    Container(
+                      width: 80,
+                      // color: Colors.purple,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 2,
+                            backgroundColor: Color(0xfffc5c65),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Absent',
+                            style: eventTextStyle(),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
             indicatorOfCalendar(),
@@ -254,147 +271,150 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
     );
   }
 
-  Widget indicatorOfCalendar() => Container(
-        width: double.infinity,
-        height: 100,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(15),
-              bottomRight: Radius.circular(15),
-            ),
-            boxShadow: [BoxShadow(color: Colors.black54, blurRadius: 2)]),
-        child: Row(
-          children: [
-            Container(
-              width: 1.sw / 3 - 20,
-              height: 80,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              // color: Colors.purple,
-              child: Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Colors.grey.shade400,
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(6),
+  Widget indicatorOfCalendar() => Padding(
+    padding: const EdgeInsets.all(4.0),
+    child: Container(
+          width: 1.sw,
+          height: 100,
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(15),
+                bottomRight: Radius.circular(15),
+              ),
+              boxShadow: [BoxShadow(color: Colors.black54, blurRadius: 2)]),
+          child: Row(
+            children: [
+              Container(
+                width: 105,
+                height: 80,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                // color: Colors.purple,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Colors.grey.shade400,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(6),
+                        ),
                       ),
-                    ),
-                    child: Center(
-                      child: Text(
-                        '21',
-                        style: TextStyle(
-                          fontFamily: 'Axiforma',
-                          color: Color(0xff6e6e6e),
-                          fontSize: 19.sp,
-                          fontWeight: FontWeight.w400,
+                      child: Center(
+                        child: Text(
+                          '21',
+                          style: TextStyle(
+                            fontFamily: 'Axiforma',
+                            color: Color(0xff6e6e6e),
+                            fontSize: 19.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  SizedBox(
-                    width: 40,
-                    child: Text(
-                      'Days Total',
-                      maxLines: 2,
-                      style: indicatorTextStyle(),
+                    SizedBox(
+                      width: 5,
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              width: 120,
-              height: 80,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              //color: Colors.purple,
-              child: Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xff26de81),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(6),
-                      ),
-                    ),
-                    child: Center(
+                    SizedBox(
+                      width: 35,
                       child: Text(
-                        '21',
-                        style: TextStyle(
-                          fontFamily: 'Axiforma',
-                          color: Colors.white,
-                          fontSize: 19.sp,
-                          fontWeight: FontWeight.w400,
+                        'Days Total',
+                        maxLines: 2,
+                        style: indicatorTextStyle(),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                width: 105,
+                height: 80,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                //color: Colors.purple,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xff26de81),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(6),
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          '21',
+                          style: TextStyle(
+                            fontFamily: 'Axiforma',
+                            color: Colors.white,
+                            fontSize: 19.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  SizedBox(
-                    width: 40,
-                    child: Text(
-                      'Days Present',
-                      maxLines: 2,
-                      style: indicatorTextStyle(),
+                    SizedBox(
+                      width: 5,
                     ),
-                  )
-                ],
-              ),
-            ),
-            Container(
-              width: 120,
-              height: 80,
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              // color: Colors.purple,
-              child: Row(
-                children: [
-                  Container(
-                    width: 40,
-                    height: 40,
-                    decoration: BoxDecoration(
-                      color: Color(0xfffc5c65),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(6),
-                      ),
-                    ),
-                    child: Center(
+                    SizedBox(
+                      width: 35,
                       child: Text(
-                        '21',
-                        style: TextStyle(
-                          fontFamily: 'Axiforma',
-                          color: Colors.white,
-                          fontSize: 19.sp,
-                          fontWeight: FontWeight.w400,
+                        'Days Present',
+                        maxLines: 2,
+                        style: indicatorTextStyle(),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Container(
+                width: 100,
+                height: 80,
+                padding: EdgeInsets.symmetric(horizontal: 10),
+                // color: Colors.purple,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 40,
+                      height: 40,
+                      decoration: BoxDecoration(
+                        color: Color(0xfffc5c65),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(6),
+                        ),
+                      ),
+                      child: Center(
+                        child: Text(
+                          '21',
+                          style: TextStyle(
+                            fontFamily: 'Axiforma',
+                            color: Colors.white,
+                            fontSize: 19.sp,
+                            fontWeight: FontWeight.w400,
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  SizedBox(
-                    width: 40,
-                    child: Text(
-                      'Days Absent',
-                      maxLines: 2,
-                      style: indicatorTextStyle(),
+                    SizedBox(
+                      width: 5,
                     ),
-                  )
-                ],
-              ),
-            )
-          ],
+                    SizedBox(
+                      width: 35,
+                      child: Text(
+                        'Days Absent',
+                        maxLines: 2,
+                        style: indicatorTextStyle(),
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
-      );
+  );
   eventTextStyle() => TextStyle(
         fontFamily: 'Axiforma',
         color: Color(0xff6e6e6e),
@@ -404,7 +424,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
   indicatorTextStyle() => TextStyle(
         fontFamily: 'Axiforma',
         color: Color(0xff343434),
-        fontSize: 9.5.sp,
+        fontSize: 8.sp,
         fontWeight: FontWeight.w600,
       );
   Widget eventShow({required Color bgColr, required Color fgColr}) => Container(

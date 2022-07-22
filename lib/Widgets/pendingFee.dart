@@ -13,169 +13,172 @@ class _PendingFeeWidgetState extends State<PendingFeeWidget> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 1.sw,
-      height: isExpanded? 450 : 200,
-      margin: EdgeInsets.symmetric( vertical: 10),
-      //padding: EdgeInsets.only(bottom: 20),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        //color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            // BoxShadow(
-            //   color: Colors.black54,
-            //   offset: Offset(1, 1),
-            //   //spreadRadius: 2
-            //   blurRadius: 5,
-            // )
-          ]
-      ),
-      child: Column(
-        children: [
-          InkWell(
-            onTap: (){
-              setState((){
-                isExpanded = !isExpanded;
-              });
-            },
-            child: Container(
-              width: 1.sw,
-              height: 200,
-              //color: Colors.red,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Container(
+        width: 1.sw,
+        height: isExpanded? 450 : 200,
+        margin: EdgeInsets.symmetric( vertical: 10),
+        //padding: EdgeInsets.only(bottom: 20),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          //color: Colors.grey.shade200,
+          borderRadius: BorderRadius.circular(15),
+            boxShadow: [
+              // BoxShadow(
+              //   color: Colors.black54,
+              //   offset: Offset(1, 1),
+              //   //spreadRadius: 2
+              //   blurRadius: 5,
+              // )
+            ]
+        ),
+        child: Column(
+          children: [
+            InkWell(
+              onTap: (){
+                setState((){
+                  isExpanded = !isExpanded;
+                });
+              },
+              child: Container(
+                width: 1.sw,
+                height: 200,
+                //color: Colors.red,
 
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black54,
-                      offset: Offset(1, 1),
-                      //spreadRadius: 2
-                      blurRadius: 5,
-                    )
-                  ],),
-              child: Column(
-                // crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Container(
-                    width: double.infinity,
-                    height: 50,
-                    decoration: BoxDecoration(
-                      color: Colors.redAccent,
-                      borderRadius: BorderRadius.only(
-                          topRight: Radius.circular(15),
-                          topLeft: Radius.circular(15)),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black54,
+                        offset: Offset(1, 1),
+                        //spreadRadius: 2
+                        blurRadius: 5,
+                      )
+                    ],),
+                child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: double.infinity,
+                      height: 50,
+                      decoration: BoxDecoration(
+                        color: Colors.redAccent,
+                        borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(15),
+                            topLeft: Radius.circular(15)),
+                      ),
+                      child: Center(
+                          child: Text(
+                        'April',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'Axiforma',
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w400),
+                      )),
                     ),
-                    child: Center(
-                        child: Text(
-                      'April',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'Axiforma',
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w400),
-                    )),
-                  ),
-                  eachfeeDetail(feeDesc: 'Amount Due', amt: 'AED 330.00'),
-                  eachfeeDetail(feeDesc: 'Amount Paid', amt: 'AED 0.0'),
-                  eachfeeDetail(feeDesc: 'Balance', amt: 'AED 330.00'),
-                  eachfeeDetail(feeDesc: 'Due Date', amt: '01 April 2022'),
-                  isExpanded ? Image(
-                    image: AssetImage('assets/images/up_arrow.png'),
-                    width: 20,
-                    height: 20,
-                  ) :
-                  Image(
-                    image: AssetImage('assets/images/down_arrow.png'),
-                    width: 20,
-                    height: 20,
-                  ),
-                ],
+                    eachfeeDetail(feeDesc: 'Amount Due', amt: 'AED 330.00'),
+                    eachfeeDetail(feeDesc: 'Amount Paid', amt: 'AED 0.0'),
+                    eachfeeDetail(feeDesc: 'Balance', amt: 'AED 330.00'),
+                    eachfeeDetail(feeDesc: 'Due Date', amt: '01 April 2022'),
+                    isExpanded ? Image(
+                      image: AssetImage('assets/images/up_arrow.png'),
+                      width: 20,
+                      height: 20,
+                    ) :
+                    Image(
+                      image: AssetImage('assets/images/down_arrow.png'),
+                      width: 20,
+                      height: 20,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
-          isExpanded ?
-          Container(
-            padding: EdgeInsets.fromLTRB(8, 16, 8, 8),
-            width: double.infinity,
-            height: 250,
-            child: Column(
-              children: [
-                Container(
-                  //padding: EdgeInsets.symmetric(horizontal: 10,),
-                  child: DottedBorder(
-                    radius: Radius.circular(12),
-                    borderType: BorderType.RRect,
-                    color: Color(0xff2884d5),
-                    child: Column(
-                      children: [
-                        feeDetailsbottom(
-                            leftText: 'Description',
-                            middleText: 'Due',
-                            rightText: 'Paid',
-                            bgClr: Color(0x1a2884d5),
-                            heading: true),
-                        feeDetailsbottom(
-                            leftText: 'Gcrbtp(june)',
-                            middleText: 'AED 330.00',
-                            rightText: 'AED 0.00',
-                            bgClr: Color(0x1a2884d5),
-                            third: true),
-                        DottedBorder(
-                          //padding: EdgeInsets.only(bottom: 2),
-                          radius: Radius.circular(12),
-                          borderType: BorderType.RRect,
-                          color: Color(0xff24c272),
-                          child: feeDetailsbottom(
-                              leftText: 'Total',
-                              middleText: 'AED 330.00',
-                              rightText: 'AED 0.00',
-                              bgClr: Color(0x1a24c272),
-                              scnd: true),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                Container(
-                  //padding: EdgeInsets.symmetric(horizontal: 10),
-                  margin: EdgeInsets.only(top: 25),
-                  child: DottedBorder(
+            isExpanded ?
+            Container(
+              padding: EdgeInsets.fromLTRB(8, 16, 8, 8),
+              width: double.infinity,
+              height: 250,
+              child: Column(
+                children: [
+                  Container(
+                    //padding: EdgeInsets.symmetric(horizontal: 10,),
+                    child: DottedBorder(
                       radius: Radius.circular(12),
                       borderType: BorderType.RRect,
-                      color: Color(0xff24c272),
-                      child: Container(
-                        padding: const EdgeInsets.all(8.0),
-                        color: Color(0x1a24c272),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Balance To Pay',
-                              style: greenBoldTextStyle(),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            Text(
-                              ':',
-                              style: greenBoldTextStyle(),
-                            ),
-                            SizedBox(
-                              width: 30,
-                            ),
-                            Text(
-                              'AED 330.00',
-                              style: greenBoldTextStyle(),
-                            )
-                          ],
-                        ),
-                      )),
-                )
-              ],
-            ),
-          ) : Container()
-        ],
+                      color: Color(0xff2884d5),
+                      child: Column(
+                        children: [
+                          feeDetailsbottom(
+                              leftText: 'Description',
+                              middleText: 'Due',
+                              rightText: 'Paid',
+                              bgClr: Color(0x1a2884d5),
+                              heading: true),
+                          feeDetailsbottom(
+                              leftText: 'Gcrbtp(june)',
+                              middleText: 'AED 330.00',
+                              rightText: 'AED 0.00',
+                              bgClr: Color(0x1a2884d5),
+                              third: true),
+                          DottedBorder(
+                            //padding: EdgeInsets.only(bottom: 2),
+                            radius: Radius.circular(12),
+                            borderType: BorderType.RRect,
+                            color: Color(0xff24c272),
+                            child: feeDetailsbottom(
+                                leftText: 'Total',
+                                middleText: 'AED 330.00',
+                                rightText: 'AED 0.00',
+                                bgClr: Color(0x1a24c272),
+                                scnd: true),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    //padding: EdgeInsets.symmetric(horizontal: 10),
+                    margin: EdgeInsets.only(top: 25),
+                    child: DottedBorder(
+                        radius: Radius.circular(12),
+                        borderType: BorderType.RRect,
+                        color: Color(0xff24c272),
+                        child: Container(
+                          padding: const EdgeInsets.all(8.0),
+                          color: Color(0x1a24c272),
+                          child: Row(
+                            children: [
+                              Text(
+                                'Balance To Pay',
+                                style: greenBoldTextStyle(),
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              Text(
+                                ':',
+                                style: greenBoldTextStyle(),
+                              ),
+                              SizedBox(
+                                width: 30,
+                              ),
+                              Text(
+                                'AED 330.00',
+                                style: greenBoldTextStyle(),
+                              )
+                            ],
+                          ),
+                        )),
+                  )
+                ],
+              ),
+            ) : Container()
+          ],
+        ),
       ),
     );
   }

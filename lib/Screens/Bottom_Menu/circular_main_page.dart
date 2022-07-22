@@ -19,7 +19,7 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar:
-          BottomNavBar(menuClr: Color(0xfffd5386), menuIndex: 0),
+          BottomNavBar(menuClr: Color(0xffffc8d1), menuIndex: 0,secndClr: Color(0xfffff6f7),icnClr: Color(0xfffd3a84)),
       drawer: SideBar(),
       key: _key,
       appBar: CustomAppBar(
@@ -31,9 +31,23 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
       body: Container(
         width: 1.sw,
         height: 1.sh - 220,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        //padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
         child: ListView(
           children: [
+            Downloadables(
+              date: '22',
+              month: 'JUN',
+              details: 'summer Vacation &PTM for PT2-CR 108',
+              topic: 'summer Vacation &PTM for PT2-CR 108',
+              name: 'Principal',
+            ),
+            Downloadables(
+              date: '22',
+              month: 'JUN',
+              details: 'summer Vacation &PTM for PT2-CR 108',
+              topic: 'summer Vacation &PTM for PT2-CR 108',
+              name: 'Principal',
+            ),
             Downloadables(
               date: '22',
               month: 'JUN',

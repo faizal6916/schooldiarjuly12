@@ -18,7 +18,7 @@ class _ResetPasswordState extends State<ResetPassword> {
     return Scaffold(
       key: _key,
       drawer: SideBar(),
-      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2)),
+      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2),icnClr: Color(0xff818181)),
       appBar: CustomAppBar(
         title: 'Reset Password',
         globalKey: _key,
