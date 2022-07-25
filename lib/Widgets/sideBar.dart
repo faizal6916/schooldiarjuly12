@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../Screens/login.dart';
+
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
 
@@ -147,7 +149,15 @@ class SideBar extends StatelessWidget {
                                             MainAxisAlignment.center,
                                         children: [
                                           ElevatedButton(
-                                            onPressed: () {},
+                                            onPressed: () {
+                                              Navigator.pushReplacement(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      LoginScreen(),
+                                                ),
+                                              );
+                                            },
                                             style: ElevatedButton.styleFrom(
                                               elevation: 0,
                                               primary: Color(0xff8e2de2),
@@ -386,22 +396,22 @@ class SideBar extends StatelessWidget {
     Navigator.of(context).pop();
     switch (index) {
       case 0:
-        Navigator.pushNamed(context, '/about');
+        Navigator.pushReplacementNamed(context, '/about');
         break;
       case 1:
-        Navigator.pushNamed(context, '/downloads');
+        Navigator.pushReplacementNamed(context, '/downloads');
         break;
       case 2:
-        Navigator.pushNamed(context, '/myprofile');
+        Navigator.pushReplacementNamed(context, '/myprofile');
         break;
       case 3:
-        Navigator.pushNamed(context, '/report');
+        Navigator.pushReplacementNamed(context, '/report');
         break;
       case 4:
         Navigator.pushNamed(context, '/home');
         break;
       case 5:
-        Navigator.pushNamed(context, '/resetPassword');
+        Navigator.pushReplacementNamed(context, '/resetPassword');
         break;
       default:
         Navigator.pushNamed(context, '/home');

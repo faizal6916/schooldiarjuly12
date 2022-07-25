@@ -25,19 +25,19 @@ class _BottomNavBarState extends State<BottomNavBar> {
   void _selectedMenu({required BuildContext context, required int index}) {
     switch (index) {
       case 0:
-        Navigator.pushNamed(context, '/circularmain');
+        Navigator.pushReplacementNamed(context, '/circularmain');
         break;
       case 1:
-        Navigator.pushNamed(context, '/assignmentmain');
+        Navigator.pushReplacementNamed(context, '/assignmentmain');
         break;
       case 2:
-        Navigator.pushNamed(context, '/calendarmain');
+        Navigator.pushReplacementNamed(context, '/calendarmain');
         break;
       case 3:
-        Navigator.pushNamed(context, '/feemain');
+        Navigator.pushReplacementNamed(context, '/feemain');
         break;
       case 4:
-        Navigator.pushNamed(context, '/report');
+        Navigator.pushReplacementNamed(context, '/report');
         break;
       default:
         throw Error();

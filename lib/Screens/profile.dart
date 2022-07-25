@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:school_diary2022/Screens/login.dart';
 import 'package:school_diary2022/Widgets/bottomNavBar.dart';
+import '../Services/backbuttonCtrl.dart';
 import '../Widgets/sideBar.dart';
 import '../Widgets/customAppbar.dart';
 import './notifications.dart';
@@ -18,94 +20,98 @@ class _ProfileScreenState extends State<ProfileScreen> {
   // _openDrawer(){
   //   _scaffoldKey.currentState!.openDrawer();
   // }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        key: _key,
-        // appBar: CustomAppBar(name: true,title: 'Home',appHeight: 200,centreText: false,globalKey: _key),
-        drawer: SideBar(),
-        endDrawer: NotificationScreen(),
-        bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2) ,icnClr: Color(0xff818181)),
-        body: Container(
-          width: 1.sw,
-          height: 1.sh,
-          child: Stack(
-            children: [
-              CustomAppBar(
-                  name: true,
-                  title: 'Home',
-                  appHeight: 120,
-                  centreText: false,
-                  globalKey: _key),
-              Positioned(
-                top: 0.15.sh-10,
-                  //alignment: Alignment(0, -0.65),
-                  child: nameCard(
-                      grade: 'Grade 12B',
-                      photourl:
-                          'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                      studentName: 'Christopher Howard')),
-              Positioned(
-               // bottom: 0,
-                top: 250,
-                child: Container(
-                  width: 1.sw,
-                  height: 1.sh - 350,
-                 // margin: EdgeInsets.only(top: 50),
-                  child: ListView(
-                    children: [
-                      listdItem(
-                        dateOn: '16-07-2022',
-                        headLine: 'Assignment',
-                        headBorder: Color(0xff505dff),
-                        headColor: Color(0x190cb1ff),
-                        imgUrl:
+    return WillPopScope(
+      onWillPop: () =>OnMoveBackwards().onWillPop(context: context),
+      child: Scaffold(
+          key: _key,
+          // appBar: CustomAppBar(name: true,title: 'Home',appHeight: 200,centreText: false,globalKey: _key),
+          drawer: SideBar(),
+          endDrawer: NotificationScreen(),
+          bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2) ,icnClr: Color(0xff818181)),
+          body: Container(
+            width: 1.sw,
+            height: 1.sh,
+            child: Stack(
+              children: [
+                CustomAppBar(
+                    name: true,
+                    title: 'Home',
+                    appHeight: 120,
+                    centreText: false,
+                    globalKey: _key),
+                Positioned(
+                  top: 100,
+                    //alignment: Alignment(0, -0.65),
+                    child: nameCard(
+                        grade: 'Grade 12B',
+                        photourl:
                             'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                        matter:
-                            'Assignmes un hecho estable hace demasiado tiempo que un lector',
-                        subHeading: 'Pair of Linear Equations',
-                        tailText: 'update On',
-                        headIcon: Icons.menu_book_outlined,
-                        headTextColor: Color(0xff525bff),
-                        iconColor: Color(0xff5558ff),
-                      ),
-                      listdItem(
-                        dateOn: '16-07-2022',
-                        headLine: 'Circular',
-                        headBorder: Color(0xfffd5186),
-                        headColor: Color(0x1acd758e),
-                        imgUrl:
-                        'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                        matter:
-                        'Voluptas vero consequuntur molestias et. Dolores fuga voluptatem. Optio laboriosam ut amet assumenda perferendis. ',
-                        subHeading: 'sint vel voluptatem',
-                        tailText: 'published On',
-                        headIcon: Icons.campaign_outlined,
-                        headTextColor: Color(0xfffd5186),
-                        iconColor: Color(0xfffd5186),
-                      ),
-                      listdItem(
-                        dateOn: '16-07-2022',
-                        headLine: 'Circular',
-                        headBorder: Color(0xfffd5186),
-                        headColor: Color(0x1acd758e),
-                        imgUrl:
-                        'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
-                        matter:
-                        'Voluptas vero consequuntur molestias et. Dolores fuga voluptatem. Optio laboriosam ut amet assumenda perferendis. ',
-                        subHeading: 'sint vel voluptatem',
-                        tailText: 'published On',
-                        headIcon: Icons.campaign_outlined,
-                        headTextColor: Color(0xfffd5186),
-                        iconColor: Color(0xfffd5186),
-                      ),
-                    ],
+                        studentName: 'Christopher Howard')),
+                Positioned(
+                 // bottom: 0,
+                  top: 260,
+                  child: Container(
+                    width: 1.sw,
+                    height: 1.sh - 350,
+                   // margin: EdgeInsets.only(top: 50),
+                    child: ListView(
+                      children: [
+                        listdItem(
+                          dateOn: '16-07-2022',
+                          headLine: 'Assignment',
+                          headBorder: Color(0xff505dff),
+                          headColor: Color(0x190cb1ff),
+                          imgUrl:
+                              'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                          matter:
+                              'Assignmes un hecho estable hace demasiado tiempo que un lector',
+                          subHeading: 'Pair of Linear Equations',
+                          tailText: 'update On',
+                          headIcon: Icons.menu_book_outlined,
+                          headTextColor: Color(0xff525bff),
+                          iconColor: Color(0xff5558ff),
+                        ),
+                        listdItem(
+                          dateOn: '16-07-2022',
+                          headLine: 'Circular',
+                          headBorder: Color(0xfffd5186),
+                          headColor: Color(0x1acd758e),
+                          imgUrl:
+                          'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                          matter:
+                          'Voluptas vero consequuntur molestias et. Dolores fuga voluptatem. Optio laboriosam ut amet assumenda perferendis. ',
+                          subHeading: 'sint vel voluptatem',
+                          tailText: 'published On',
+                          headIcon: Icons.campaign_outlined,
+                          headTextColor: Color(0xfffd5186),
+                          iconColor: Color(0xfffd5186),
+                        ),
+                        listdItem(
+                          dateOn: '16-07-2022',
+                          headLine: 'Circular',
+                          headBorder: Color(0xfffd5186),
+                          headColor: Color(0x1acd758e),
+                          imgUrl:
+                          'https://images.unsplash.com/photo-1554126807-6b10f6f6692a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80',
+                          matter:
+                          'Voluptas vero consequuntur molestias et. Dolores fuga voluptatem. Optio laboriosam ut amet assumenda perferendis. ',
+                          subHeading: 'sint vel voluptatem',
+                          tailText: 'published On',
+                          headIcon: Icons.campaign_outlined,
+                          headTextColor: Color(0xfffd5186),
+                          iconColor: Color(0xfffd5186),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ],
-          ),
-        ));
+                )
+              ],
+            ),
+          )),
+    );
   }
 
   Widget nameCard(

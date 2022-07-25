@@ -177,7 +177,7 @@ class _DownloadablesState extends State<Downloadables> {
 
         Container(
           height: 30,
-          width: 250,
+          width: 220,
           decoration: BoxDecoration( color: Color(0xff25dbdc),borderRadius: BorderRadius.circular(5)),
           child: Row(
             children: [
@@ -189,7 +189,7 @@ class _DownloadablesState extends State<Downloadables> {
                   fontFamily: "Roboto",
                   fontStyle:  FontStyle.normal,
                   fontSize: 15.5.sp),),
-              SizedBox(width: 80,),
+              SizedBox(width: 60,),
               Icon(Icons.remove_red_eye_outlined,color: Color(0xffffffff),size: 20,),
             ],
           ),
