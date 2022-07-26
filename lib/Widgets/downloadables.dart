@@ -60,7 +60,7 @@ class _DownloadablesState extends State<Downloadables> {
                 child: Row(
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      //padding: EdgeInsets.all(5),
                       height: 50,
                       width: 0.13.sw,
                       decoration: BoxDecoration(
@@ -69,6 +69,7 @@ class _DownloadablesState extends State<Downloadables> {
 
                       ),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(widget.date,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
                           Text(widget.month,style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
