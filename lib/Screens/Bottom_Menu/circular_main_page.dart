@@ -21,23 +21,23 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () => OnMoveBackwards().onWillPopBottom(context: context),
-      child: Scaffold(
-        endDrawer: NotificationScreen(),
-        bottomNavigationBar: BottomNavBar(
-          menuClr: Color(0xffffc8d1),
-          menuIndex: 0,
-          secndClr: Color(0xfffff6f7),
-          icnClr: Color(0xfffd3a84),
-        ),
-        drawer: SideBar(),
-        key: _key,
-        appBar: CustomAppBar(
-          title: 'Circular',
-          globalKey: _key,
-          name: false,
-          appHeight: 100,
-        ),
-        body: Container(
+      //child: Scaffold(
+        //endDrawer: NotificationScreen(),
+        // //bottomNavigationBar: BottomNavBar(
+        //   menuClr: Color(0xffffc8d1),
+        //   menuIndex: 0,
+        //   secndClr: Color(0xfffff6f7),
+        //   icnClr: Color(0xfffd3a84),
+        // ),
+        //drawer: SideBar(),
+       // key: _key,
+        // appBar: CustomAppBar(
+        //   title: 'Circular',
+        //   globalKey: _key,
+        //   name: false,
+        //   appHeight: 100,
+        // ),
+        child: Container(
           width: 1.sw,
           height: 1.sh - 220,
           //padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -74,7 +74,7 @@ class _CircularMainScreenState extends State<CircularMainScreen> {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

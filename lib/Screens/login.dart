@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
+import 'package:school_diary2022/Screens/homeScreen.dart';
 import 'package:school_diary2022/Screens/profile.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -148,7 +149,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfileScreen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
                         },
                         child: Text(
                           'LOGIN',

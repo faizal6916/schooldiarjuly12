@@ -21,22 +21,22 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () =>OnMoveBackwards().onWillPop(context: context),
-      child: Scaffold(
-        endDrawer: NotificationScreen(),
-        bottomNavigationBar: BottomNavBar(
-          menuClr: Color(0xfff2f2f2),
-          secndClr: Color(0xfff2f2f2),
-          icnClr: Color(0xff818181),
-        ),
-        drawer: SideBar(),
-        key: _key,
-        appBar: CustomAppBar(
-          title: 'Profile',
-          globalKey: _key,
-          name: false,
-          appHeight: 100,
-        ),
-        body: ListView(
+     // child: Scaffold(
+       // endDrawer: NotificationScreen(),
+        // bottomNavigationBar: BottomNavBar(
+        //   menuClr: Color(0xfff2f2f2),
+        //   secndClr: Color(0xfff2f2f2),
+        //   icnClr: Color(0xff818181),
+        // ),
+       // drawer: SideBar(),
+        //key: _key,
+        // appBar: CustomAppBar(
+        //   title: 'Profile',
+        //   globalKey: _key,
+        //   name: false,
+        //   appHeight: 100,
+        // ),
+        child: Column(
           children: [
             SizedBox(
               height: 0.02.sh,
@@ -445,7 +445,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
             // )
           ],
         ),
-      ),
+
     );
   }
 }

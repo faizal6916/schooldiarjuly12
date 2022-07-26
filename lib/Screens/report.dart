@@ -26,19 +26,19 @@ class _ReportScreenState extends State<ReportScreen> with TickerProviderStateMix
     TabController _tabController = TabController(length: 3, vsync: this);
     return WillPopScope(
       onWillPop:() => OnMoveBackwards().onWillPopBottom(context: context),
-      child: Scaffold(
-        endDrawer: NotificationScreen(),
-        backgroundColor: Colors.grey.shade200,
-        bottomNavigationBar: BottomNavBar(menuClr: Color(0xffffc8d1),menuIndex: 4,secndClr: Color(0xfffff6f7),icnClr: Color(0xfffd3a84)),
-        drawer: SideBar(),
-        key: _key,
-        appBar: CustomAppBar(
-          title: 'Assessments',
-          globalKey: _key,
-          name: false,
-          appHeight: 100,
-        ),
-        body: Column(
+     // child: Scaffold(
+        //endDrawer: NotificationScreen(),
+        //backgroundColor: Colors.grey.shade200,
+        //bottomNavigationBar: BottomNavBar(menuClr: Color(0xffffc8d1),menuIndex: 4,secndClr: Color(0xfffff6f7),icnClr: Color(0xfffd3a84)),
+        //drawer: SideBar(),
+       // key: _key,
+       //  appBar: CustomAppBar(
+       //    title: 'Assessments',
+       //    globalKey: _key,
+       //    name: false,
+       //    appHeight: 100,
+       //  ),
+        child: Column(
           children: [
             Container(
              width: 1.sw,
@@ -82,7 +82,7 @@ class _ReportScreenState extends State<ReportScreen> with TickerProviderStateMix
             )
           ],
         ),
-      ),
+
     );
   }
 }

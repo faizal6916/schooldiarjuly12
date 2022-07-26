@@ -189,7 +189,7 @@ class _DownloadablesState extends State<Downloadables> {
                   fontFamily: "Roboto",
                   fontStyle:  FontStyle.normal,
                   fontSize: 15.5.sp),),
-              SizedBox(width: 60,),
+              SizedBox(width: 50,),
               Icon(Icons.remove_red_eye_outlined,color: Color(0xffffffff),size: 20,),
             ],
           ),

@@ -1,3 +1,5 @@
+//--------------------------------Not Using-----------------------------------//
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,6 +15,7 @@ class SideBar extends StatelessWidget {
       child: Container(
         height: 1.sh,
         child: ListView(
+          physics: NeverScrollableScrollPhysics(),
           padding: customPadding,
           children: [
             Container(
@@ -31,7 +34,10 @@ class SideBar extends StatelessWidget {
                   SizedBox(
                     height: 0.03.sh,
                   ),
-                  Divider(thickness: 2, color: Color(0xfffed330)),
+                  Divider(
+                    thickness: 2,
+                    color: Color(0xfffed330),
+                  ),
                   SizedBox(
                     height: 0.025.sh,
                   ),
@@ -217,7 +223,10 @@ class SideBar extends StatelessWidget {
                           width: 150,
                           child: Row(
                             children: [
-                              Icon(Icons.lock),
+                              Icon(
+                                Icons.lock,
+                                color: Color(0xff25dbdc),
+                              ),
                               SizedBox(
                                 width: 5,
                               ),

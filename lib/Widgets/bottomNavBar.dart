@@ -1,3 +1,5 @@
+//--------------------------------Not Using-----------------------------------//
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -64,7 +66,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
             topRight: Radius.circular(25),
           ),
           boxShadow: [
-            BoxShadow(color: Colors.black, blurRadius: 5, offset: Offset(1, 1))
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 5,
+              offset: Offset(1, 1),
+            )
           ]),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

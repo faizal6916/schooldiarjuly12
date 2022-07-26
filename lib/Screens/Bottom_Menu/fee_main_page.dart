@@ -25,19 +25,19 @@ class _FeeMainScreenState extends State<FeeMainScreen> with TickerProviderStateM
     TabController _tabController = TabController(length: 2, vsync: this);
     return WillPopScope(
       onWillPop: () => OnMoveBackwards().onWillPopBottom(context: context),
-      child: Scaffold(
-        endDrawer: NotificationScreen(),
-        backgroundColor: Colors.grey.shade200,
-        bottomNavigationBar: BottomNavBar(menuClr: Color(0xffc3ffe8),menuIndex: 3,secndClr: Color(0xfff0fff4),icnClr: Color(0xff00b59c)),
-        drawer: SideBar(),
-        key: _key,
-        appBar: CustomAppBar(
-          title: 'Fee Details',
-          globalKey: _key,
-          name: false,
-          appHeight: 100,
-        ),
-        body: Column(
+      //child: Scaffold(
+       // endDrawer: NotificationScreen(),
+       // backgroundColor: Colors.grey.shade200,
+        //bottomNavigationBar: BottomNavBar(menuClr: Color(0xffc3ffe8),menuIndex: 3,secndClr: Color(0xfff0fff4),icnClr: Color(0xff00b59c)),
+       // drawer: SideBar(),
+        //key: _key,
+        // appBar: CustomAppBar(
+        //   title: 'Fee Details',
+        //   globalKey: _key,
+        //   name: false,
+        //   appHeight: 100,
+        // ),
+        child: Column(
           children: [
             Container(
               width: 1.sw,
@@ -81,7 +81,7 @@ class _FeeMainScreenState extends State<FeeMainScreen> with TickerProviderStateM
             )
           ],
         ),
-      ),
+
     );
   }
 }

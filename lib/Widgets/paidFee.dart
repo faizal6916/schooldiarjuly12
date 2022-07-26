@@ -64,41 +64,41 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
                     leftPart(date: '1 JUN 2021'),
                     Positioned(
                       top: 30,
-                      left: 95,
+                      left: 1.sw/4.7,
                       child: centreTile(),
                     ),
                     Positioned(
                       top: 45,
-                      left: 95,
+                      left: 1.sw/4.7,
                       child: centreTile(),
                     ),
                     Positioned(
                       top: 60,
-                      left: 95,
+                      left: 1.sw/4.7,
                       child: centreTile(),
                     ),
                     Positioned(
                       top: 75,
-                      left: 95,
+                      left: 1.sw/4.7,
                       child: centreTile(),
                     ),
                     Positioned(
                       top: 90,
-                      left: 95,
+                      left: 1.sw/4.7,
                       child: centreTile(),
                     ),
                     Positioned(
                       top: 105,
-                      left: 95,
+                      left: 1.sw/4.7,
                       child: centreTile(),
                     ),
                     Positioned(right: 0, child: rightPart()),
                     Positioned(
-                      right: 235,
+                      right: 1.sw/1.625,
                         top: -20,
                         child: ciclePart(),),
                     Positioned(
-                        right: 235,
+                        right: 1.sw/1.625,
                         top: 120,
                         child: ciclePart())
                   ],
@@ -254,7 +254,7 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
       );
 
   Widget leftPart({required String date}) => Container(
-        width: 100,
+        width: 1.sw/3,
         height: 140,
         padding: EdgeInsets.all(20),
         child: Center(
@@ -281,7 +281,7 @@ class _PaidFeeWidgetState extends State<PaidFeeWidget> {
       );
 
   Widget rightPart() => Container(
-        width: 250,
+        width: 1.sw*2/3,
         height: 140,
         decoration: BoxDecoration(
           color: Colors.white,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import './Screens/homeScreen.dart';
 import './Screens/Bottom_Menu/assignment_main_page.dart';
 import './Screens/Bottom_Menu/calendar_main_page.dart';
 import './Screens/Bottom_Menu/circular_main_page.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => SplashScreen(),
-          '/home': (context) => ProfileScreen(),
+          '/home': (context) => HomeScreen(),
           '/about': (context) => AboutSceen(),
           '/downloads': (context) => DownloadScreen(),
           '/myprofile': (context) => MyProfileScreen(),

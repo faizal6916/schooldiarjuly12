@@ -41,28 +41,29 @@ class _DownloadScreenState extends State<DownloadScreen>
     TabController _tabController = TabController(length: 3, vsync: this);
     return WillPopScope(
       onWillPop: () =>OnMoveBackwards().onWillPop(context: context),
-      child: Scaffold(
-          endDrawer: NotificationScreen(),
-          bottomNavigationBar: BottomNavBar(
-            menuClr: Color(0xfff2f2f2),
-            secndClr: Color(0xfff2f2f2),
-            icnClr: Color(0xff818181),
-          ),
-          backgroundColor: Colors.grey.shade200,
-          drawer: SideBar(),
-          key: _key,
-          appBar: CustomAppBar(
-            title: 'Downloads',
-            globalKey: _key,
-            name: false,
-            appHeight: 100,
-          ),
-          body: Column(
+     // child: Scaffold(
+          //endDrawer: NotificationScreen(),
+          // bottomNavigationBar: BottomNavBar(
+          //   menuClr: Color(0xfff2f2f2),
+          //   secndClr: Color(0xfff2f2f2),
+          //   icnClr: Color(0xff818181),
+          // ),
+         // backgroundColor: Colors.grey.shade200,
+         // drawer: SideBar(),
+          //key: _key,
+          // appBar: CustomAppBar(
+          //   title: 'Downloads',
+          //   globalKey: _key,
+          //   name: false,
+          //   appHeight: 100,
+          // ),
+          child: Column(
             children: [
-              SizedBox(
-                height: 15,
-              ),
+              // SizedBox(
+              //   height: 15,
+              // ),
               Container(
+                margin: EdgeInsets.only(top: 10),
                 width: 1.sw,
                 height: 40,
                 //margin: EdgeInsets.symmetric(vertical: 10),
@@ -138,7 +139,7 @@ class _DownloadScreenState extends State<DownloadScreen>
                 ),
               )
             ],
-          )),
+          ),
     );
   }
 

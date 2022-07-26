@@ -16,19 +16,19 @@ class _ResetPasswordState extends State<ResetPassword> {
   GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      key: _key,
-      drawer: SideBar(),
-        endDrawer: NotificationScreen(),
-      bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2),icnClr: Color(0xff818181)),
-      appBar: CustomAppBar(
-        title: 'Reset Password',
-        globalKey: _key,
-        name: false,
-        appHeight: 100,
-      ),
-      body: SingleChildScrollView(
-        child: Column(
+    //return Scaffold(
+      //key: _key,
+      //drawer: SideBar(),
+        //endDrawer: NotificationScreen(),
+      //bottomNavigationBar: BottomNavBar(menuClr: Color(0xfff2f2f2),secndClr: Color(0xfff2f2f2),icnClr: Color(0xff818181)),
+      // appBar: CustomAppBar(
+      //   title: 'Reset Password',
+      //   globalKey: _key,
+      //   name: false,
+      //   appHeight: 100,
+      // ),
+     // body: SingleChildScrollView(
+        return Column(
           children: [
             Container(
               margin: EdgeInsets.symmetric(horizontal: 20),
@@ -130,8 +130,8 @@ class _ResetPasswordState extends State<ResetPassword> {
               ),
             ),
           ],
-        ),
-      ),
-    );
+        );
+
+
   }
 }

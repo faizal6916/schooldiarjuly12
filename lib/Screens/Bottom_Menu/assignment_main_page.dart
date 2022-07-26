@@ -21,22 +21,22 @@ class _AssignmentMainScreenState extends State<AssignmentMainScreen> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () => OnMoveBackwards().onWillPopBottom(context: context),
-      child: Scaffold(
-          endDrawer: NotificationScreen(),
-        bottomNavigationBar: BottomNavBar(
-            menuClr: Color(0xffaddcff),
-            menuIndex: 1,
-            secndClr: Color(0xffeaf6ff),
-            icnClr: Color(0xff5558ff)),
-        drawer: SideBar(),
-        key: _key,
-        appBar: CustomAppBar(
-          title: 'Circular',
-          globalKey: _key,
-          name: false,
-          appHeight: 100,
-        ),
-        body: Container(
+     // child: Scaffold(
+          //endDrawer: NotificationScreen(),
+        // bottomNavigationBar: BottomNavBar(
+        //     menuClr: Color(0xffaddcff),
+        //     menuIndex: 1,
+        //     secndClr: Color(0xffeaf6ff),
+        //     icnClr: Color(0xff5558ff)),
+        //drawer: SideBar(),
+        //key: _key,
+        // appBar: CustomAppBar(
+        //   title: 'Circular',
+        //   globalKey: _key,
+        //   name: false,
+        //   appHeight: 100,
+        // ),
+        child: Container(
           width: 1.sw,
           height: 1.sh - 220,
           // padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -59,7 +59,7 @@ class _AssignmentMainScreenState extends State<AssignmentMainScreen> {
             ],
           ),
         ),
-      ),
+
     );
   }
 }

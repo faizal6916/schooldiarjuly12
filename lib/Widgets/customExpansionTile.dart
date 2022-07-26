@@ -19,19 +19,19 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
   bool isExpanded = false;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          isExpanded = !isExpanded;
-        });
-      },
-      child: Container(
-        width: 1.sw,
-        height: isExpanded ? 670 : 160,
-        color: Colors.grey.shade200,
-        child: Column(
-          children: [
-            Container(
+    return Container(
+      width: 1.sw,
+      height: isExpanded ? 670 : 160,
+      color: Colors.grey.shade200,
+      child: Column(
+        children: [
+          InkWell(
+            onTap: () {
+              setState(() {
+                isExpanded = !isExpanded;
+              });
+            },
+            child: Container(
               padding: EdgeInsets.all(25),
               width: double.infinity,
               height: 125,
@@ -79,109 +79,109 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
                 ],
               ),
             ),
-            //SizedBox(height: 15,),
-            isExpanded
-                ? Container(
-                    padding: EdgeInsets.all(25),
-                    width: double.infinity,
-                    height: 475,
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                    //color: Colors.cyanAccent,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black54,
-                              offset: Offset(1, 1),
-                              //spreadRadius: 2
-                              blurRadius: 5)
-                        ]),
-                    child: Column(
-                      children: [
-                        _progressCardTitle(),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[0],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[1],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[2],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[3],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[0],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[1],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[2],
-                        ),
-                        _subjectwiseMark(
-                          subName: 'English',
-                          obtMark: '0',
-                          maxMark: '50',
-                          obtGrade: 'G',
-                          colour: _colorUsed[3],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Column(
-                              children: [
-                                SizedBox(
-                                  height: 20,
-                                ),
-                                Icon(
-                                  Icons.cloud_download_outlined,
-                                  color: Color(0xff6e6e6e),
-                                ),
-                                Text(
-                                  'Download file',
-                                  style: Util().progressTitle(),
-                                )
-                              ],
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
-                  )
-                : Container()
-          ],
-        ),
+          ),
+          //SizedBox(height: 15,),
+          isExpanded
+              ? Container(
+                  padding: EdgeInsets.all(25),
+                  width: double.infinity,
+                  height: 475,
+                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  //color: Colors.cyanAccent,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(15),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black54,
+                            offset: Offset(1, 1),
+                            //spreadRadius: 2
+                            blurRadius: 5)
+                      ]),
+                  child: Column(
+                    children: [
+                      _progressCardTitle(),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[0],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[1],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[2],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[3],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[0],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[1],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[2],
+                      ),
+                      _subjectwiseMark(
+                        subName: 'English',
+                        obtMark: '0',
+                        maxMark: '50',
+                        obtGrade: 'G',
+                        colour: _colorUsed[3],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Column(
+                            children: [
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Icon(
+                                Icons.cloud_download_outlined,
+                                color: Color(0xff6e6e6e),
+                              ),
+                              Text(
+                                'Download file',
+                                style: Util().progressTitle(),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ],
+                  ),
+                )
+              : Container()
+        ],
       ),
     );
   }

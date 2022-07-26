@@ -26,24 +26,24 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
     TabController _tabController = TabController(length: 3, vsync: this);
     return WillPopScope(
       onWillPop: () => OnMoveBackwards().onWillPopBottom(context: context),
-      child: Scaffold(
+      //child: Scaffold(
         //backgroundColor: Colors.grey.shade200,
-        endDrawer: NotificationScreen(),
-        bottomNavigationBar: BottomNavBar(
-          menuClr: Color(0xffffbef9),
-          secndClr: Color(0xfffff1ff),
-          icnClr: Color(0xffa93aff),
-          menuIndex: 2,
-        ),
-        drawer: SideBar(),
-        key: _key,
-        appBar: CustomAppBar(
-          title: 'Calendar',
-          globalKey: _key,
-          name: false,
-          appHeight: 100,
-        ),
-        body: Container(
+        //endDrawer: NotificationScreen(),
+        // bottomNavigationBar: BottomNavBar(
+        //   menuClr: Color(0xffffbef9),
+        //   secndClr: Color(0xfffff1ff),
+        //   icnClr: Color(0xffa93aff),
+        //   menuIndex: 2,
+        // ),
+        //drawer: SideBar(),
+        //key: _key,
+        // appBar: CustomAppBar(
+        //   title: 'Calendar',
+        //   globalKey: _key,
+        //   name: false,
+        //   appHeight: 100,
+        // ),
+        child: Container(
           width: 1.sw,
           height: 1.sh - 200,
           padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
@@ -271,7 +271,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
             ],
           ),
         ),
-      ),
+
     );
   }
 
@@ -280,6 +280,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
     child: Container(
           width: 1.sw,
           height: 100,
+          padding: EdgeInsets.all(8),
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
@@ -288,12 +289,14 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
               ),
               boxShadow: [BoxShadow(color: Colors.black54, blurRadius: 2)]),
           child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
-                width: 105,
+                //width: 100,
+                width: 1.sw/3-35,
                 height: 80,
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                // color: Colors.purple,
+                //color: Colors.red,
+               // padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
                     Container(
@@ -318,7 +321,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                       ),
                     ),
                     SizedBox(
-                      width: 5,
+                      width: 10,
                     ),
                     SizedBox(
                       width: 35,
@@ -332,9 +335,10 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                 ),
               ),
               Container(
-                width: 105,
+                width: 1.sw/3-35,
+                //width: 100,
                 height: 80,
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                //padding: EdgeInsets.symmetric(horizontal: 10),
                 //color: Colors.purple,
                 child: Row(
                   children: [
@@ -360,7 +364,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                       ),
                     ),
                     SizedBox(
-                      width: 5,
+                      width: 10,
                     ),
                     SizedBox(
                       width: 35,
@@ -374,9 +378,10 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                 ),
               ),
               Container(
-                width: 100,
+                width: 1.sw/3-35,
+               // width: 100,
                 height: 80,
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                //padding: EdgeInsets.symmetric(horizontal: 10),
                 // color: Colors.purple,
                 child: Row(
                   children: [
@@ -402,7 +407,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                       ),
                     ),
                     SizedBox(
-                      width: 5,
+                      width: 10,
                     ),
                     SizedBox(
                       width: 35,

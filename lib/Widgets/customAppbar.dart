@@ -1,3 +1,5 @@
+//------------------------------NOT USING------------------------------------//
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -24,8 +26,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: appHeight,
+      height:name? appHeight : 100,
       child: AppBar(
+        //foregroundColor: Colors.red,
+       // bottom: PreferredSize(child: Container(width: double.infinity,color: Colors.red,), preferredSize:name? Size.fromHeight(50):Size.fromHeight(0)),
         leading: InkWell(
           onTap: () => globalKey.currentState!.openDrawer(),
           child: Container(

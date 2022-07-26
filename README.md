@@ -17,3 +17,5 @@ samples, guidance on mobile development, and a full API reference.
 
 Created two branches.
 Created two branches.
+
+_pages[_seletedPageIndex]['page'] as Widget,
