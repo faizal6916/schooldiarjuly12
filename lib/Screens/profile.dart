@@ -121,9 +121,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black54,
-              blurRadius: 5,
-              offset: Offset(1, 1),
+                color: Colors.black12,
+                offset: Offset(0,0),
+                blurRadius: 1,
+                spreadRadius: 0
+            ), BoxShadow(
+                color: Colors.black12,
+                offset: Offset(0,2),
+                blurRadius: 6,
+                spreadRadius: 0
+            ), BoxShadow(
+                color: Colors.black12,
+                offset: Offset(0,10),
+                blurRadius: 20,
+                spreadRadius: 0
             )
           ],
           borderRadius: BorderRadius.circular(20),
@@ -184,9 +195,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
-              color: Colors.black54,
-              blurRadius: 5,
-              offset: Offset(1, 1),
+                color: Colors.black12,
+                offset: Offset(0,0),
+                blurRadius: 1,
+                spreadRadius: 0
+            ), BoxShadow(
+                color: Colors.black12,
+                offset: Offset(0,2),
+                blurRadius: 6,
+                spreadRadius: 0
+            ), BoxShadow(
+                color: Colors.black12,
+                offset: Offset(0,10),
+                blurRadius: 20,
+                spreadRadius: 0
             )
           ],
           borderRadius: BorderRadius.circular(20),

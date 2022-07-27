@@ -32,21 +32,33 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
               });
             },
             child: Container(
-              padding: EdgeInsets.all(25),
+             // padding: EdgeInsets.all(25),
               width: double.infinity,
               height: 125,
-              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               //color: Colors.red,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
                 boxShadow: [
                   BoxShadow(
-                    color: Colors.black54,
-                    offset: Offset(1, 1),
-                    //spreadRadius: 2
-                    blurRadius: 5,
-                  )
+                      color: Colors.black12,
+                      offset: Offset(0,0),
+                      blurRadius: 1,
+                      spreadRadius: 0
+                  ), BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(0,2),
+                      blurRadius: 6,
+                      spreadRadius: 0
+                  ),
+                  // BoxShadow(
+                  //     color: Colors.black12,
+                  //     offset: Offset(0,10),
+                  //     blurRadius: 20,
+                  //     spreadRadius: 0
+                  // )
                 ],
               ),
               child: Row(
@@ -83,20 +95,32 @@ class _CustomExpansionTileState extends State<CustomExpansionTile> {
           //SizedBox(height: 15,),
           isExpanded
               ? Container(
-                  padding: EdgeInsets.all(25),
+            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  //padding: EdgeInsets.all(25),
                   width: double.infinity,
                   height: 475,
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                   //color: Colors.cyanAccent,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                       boxShadow: [
                         BoxShadow(
-                            color: Colors.black54,
-                            offset: Offset(1, 1),
-                            //spreadRadius: 2
-                            blurRadius: 5)
+                            color: Colors.black12,
+                            offset: Offset(0,0),
+                            blurRadius: 1,
+                            spreadRadius: 0
+                        ), BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(0,2),
+                            blurRadius: 6,
+                            spreadRadius: 0
+                        ), BoxShadow(
+                            color: Colors.black12,
+                            offset: Offset(0,10),
+                            blurRadius: 20,
+                            spreadRadius: 0
+                        )
                       ]),
                   child: Column(
                     children: [

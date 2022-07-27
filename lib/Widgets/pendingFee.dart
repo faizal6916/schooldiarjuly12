@@ -51,10 +51,20 @@ class _PendingFeeWidgetState extends State<PendingFeeWidget> {
                     borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.black54,
-                        offset: Offset(1, 1),
-                        //spreadRadius: 2
-                        blurRadius: 5,
+                          color: Colors.black12,
+                          offset: Offset(0,0),
+                          blurRadius: 1,
+                          spreadRadius: 0
+                      ), BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0,2),
+                          blurRadius: 6,
+                          spreadRadius: 0
+                      ), BoxShadow(
+                          color: Colors.black12,
+                          offset: Offset(0,10),
+                          blurRadius: 20,
+                          spreadRadius: 0
                       )
                     ],),
                 child: Column(

@@ -27,257 +27,258 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
     return WillPopScope(
       onWillPop: () => OnMoveBackwards().onWillPopBottom(context: context),
       //child: Scaffold(
-        //backgroundColor: Colors.grey.shade200,
-        //endDrawer: NotificationScreen(),
-        // bottomNavigationBar: BottomNavBar(
-        //   menuClr: Color(0xffffbef9),
-        //   secndClr: Color(0xfffff1ff),
-        //   icnClr: Color(0xffa93aff),
-        //   menuIndex: 2,
-        // ),
-        //drawer: SideBar(),
-        //key: _key,
-        // appBar: CustomAppBar(
-        //   title: 'Calendar',
-        //   globalKey: _key,
-        //   name: false,
-        //   appHeight: 100,
-        // ),
-        child: Container(
-          width: 1.sw,
-          height: 1.sh - 200,
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          child: ListView(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Container(
+      //backgroundColor: Colors.grey.shade200,
+      //endDrawer: NotificationScreen(),
+      // bottomNavigationBar: BottomNavBar(
+      //   menuClr: Color(0xffffbef9),
+      //   secndClr: Color(0xfffff1ff),
+      //   icnClr: Color(0xffa93aff),
+      //   menuIndex: 2,
+      // ),
+      //drawer: SideBar(),
+      //key: _key,
+      // appBar: CustomAppBar(
+      //   title: 'Calendar',
+      //   globalKey: _key,
+      //   name: false,
+      //   appHeight: 100,
+      // ),
+      child: Container(
+        width: 1.sw,
+        height: 1.sh - 200,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: ListView(
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                height: 400,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(15),
+                        topRight: Radius.circular(15))),
+                child: TableCalendar(
+                  //shouldFillViewport: true,
+                  //pageJumpingEnabled: false,
 
-                  height: 400,
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                    borderRadius: BorderRadius.only(topLeft: Radius.circular(15),topRight: Radius.circular(15))
-                  ),
-                  child: TableCalendar(
-                    //shouldFillViewport: true,
-                    //pageJumpingEnabled: false,
-
-                    focusedDay: DateTime.now(),
-                    firstDay: DateTime(2010),
-                    lastDay: DateTime(2050),
-                    calendarFormat: _format,
-                    onFormatChanged: (CalendarFormat format) {
-                      setState(() {
-                        _format = format;
-                      });
-                    },
-                    selectedDayPredicate: (day) {
-                      return isSameDay(_selectedDay, day);
-                    },
-                    onDaySelected: (selectedDay, focusedDay) {
-                      setState(() {
-                        _selectedDay = selectedDay;
-                        _focusedDay =
-                            focusedDay; // update `_focusedDay` here as well
-                      });
-                    },
-                    headerStyle: HeaderStyle(
-                      formatButtonVisible: false,
-                      titleCentered: true,
-                      // decoration: BoxDecoration(
-                      //   color: Color(0xff34378b)
-                      // )
-                      titleTextStyle: TextStyle(
-                        fontFamily: 'Axiforma',
-                        color: Color(0xff34378b),
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      leftChevronIcon: Icon(
-                        Icons.arrow_left_outlined,
-                        color: Color(0xff34378b),
-                      ),
-                      rightChevronIcon: Icon(
-                        Icons.arrow_right_outlined,
-                        color: Color(0xff34378b),
-                      ),
+                  focusedDay: DateTime.now(),
+                  firstDay: DateTime(2010),
+                  lastDay: DateTime(2050),
+                  calendarFormat: _format,
+                  onFormatChanged: (CalendarFormat format) {
+                    setState(() {
+                      _format = format;
+                    });
+                  },
+                  selectedDayPredicate: (day) {
+                    return isSameDay(_selectedDay, day);
+                  },
+                  onDaySelected: (selectedDay, focusedDay) {
+                    setState(() {
+                      _selectedDay = selectedDay;
+                      _focusedDay =
+                          focusedDay; // update `_focusedDay` here as well
+                    });
+                  },
+                  headerStyle: HeaderStyle(
+                    formatButtonVisible: false,
+                    titleCentered: true,
+                    // decoration: BoxDecoration(
+                    //   color: Color(0xff34378b)
+                    // )
+                    titleTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff34378b),
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
                     ),
-                    daysOfWeekStyle: DaysOfWeekStyle(
-                      weekendStyle: TextStyle(
-                        fontFamily: 'Axiforma',
-                        color: Color(0xff34378b).withOpacity(0.5),
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
-                      weekdayStyle: TextStyle(
-                        fontFamily: 'Axiforma',
-                        color: Color(0xff34378b).withOpacity(0.5),
-                        fontSize: 13.sp,
-                        fontWeight: FontWeight.w400,
-                      ),
+                    leftChevronIcon: Icon(
+                      Icons.arrow_left_outlined,
+                      color: Color(0xff34378b),
                     ),
-                    calendarStyle: CalendarStyle(
-                      holidayTextStyle: TextStyle(
-                        fontFamily: 'Axiforma',
-                        color: Color(0xfffc5c65),
-                        fontSize: 19,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      defaultTextStyle: TextStyle(
-                        fontFamily: 'Axiforma',
-                        color: Color(0xff5c5c5c),
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
-                      weekendTextStyle: TextStyle(
-                        fontFamily: 'Axiforma',
-                        color: Color(0xfffc5c65),
-                        fontSize: 16.sp,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    rightChevronIcon: Icon(
+                      Icons.arrow_right_outlined,
+                      color: Color(0xff34378b),
                     ),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4),
-                child: Container(
-                  width: double.infinity,
-                  height: 50,
-                  color: Colors.white,
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      Container(
-                        width: 80,
-                        //color: Colors.yellow,
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 2,
-                              backgroundColor: Color(0xfffed330),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Events',
-                              style: eventTextStyle(),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 80,
-                        //color: Colors.pink,
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 2,
-                              backgroundColor: Color(0xff5fd2d0),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Exams',
-                              style: eventTextStyle(),
-                            )
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: 80,
-                        // color: Colors.purple,
-                        child: Row(
-                          children: [
-                            CircleAvatar(
-                              radius: 2,
-                              backgroundColor: Color(0xfffc5c65),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Text(
-                              'Absent',
-                              style: eventTextStyle(),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              indicatorOfCalendar(),
-              SizedBox(
-                height: 2,
-              ),
-              Container(
-                width: 1.sw,
-                //width: double.infinity,
-                decoration: BoxDecoration(color: Colors.white),
-                height: 30,
-                child: TabBar(
-                  controller: _tabController,
-                  isScrollable: true,
-                  labelColor: Color(0xff34378b),
-                  labelStyle: TextStyle(
-                      fontSize: 12.sp,
+                  daysOfWeekStyle: DaysOfWeekStyle(
+                    weekendStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff34378b).withOpacity(0.5),
+                      fontSize: 13.sp,
                       fontWeight: FontWeight.w400,
-                      fontFamily: 'Axiforma'),
-                  // indicator: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(8),
-                  //     color: Colors.white),
-                  indicatorColor: Color(0xff34378b),
-                  // indicatorSize: TabBarIndicatorSize.tab,
-                  unselectedLabelColor: Color(0xFF414D55).withOpacity(0.36),
-                  tabs: [
-                    Tab(
-                      text: 'Today',
                     ),
-                    Tab(
-                      text: 'Upcoming Events',
+                    weekdayStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff34378b).withOpacity(0.5),
+                      fontSize: 13.sp,
+                      fontWeight: FontWeight.w400,
                     ),
-                    Tab(
-                      text: 'Upcoming Exams',
+                  ),
+                  calendarStyle: CalendarStyle(
+                    holidayTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xfffc5c65),
+                      fontSize: 19,
+                      fontWeight: FontWeight.w600,
                     ),
-                  ],
+                    defaultTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xff5c5c5c),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    weekendTextStyle: TextStyle(
+                      fontFamily: 'Axiforma',
+                      color: Color(0xfffc5c65),
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
                 ),
               ),
-              Container(
-                width: 1.sw,
-                height: 200,
-                child: TabBarView(
-                  controller: _tabController,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                width: double.infinity,
+                height: 50,
+                color: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Container(
-                        width: 1.sw,
-                        child: ListView(
-                          children: [
-                            eventShow(
-                              bgColr: Color(0xfff7d794),
-                              fgColr: Color(0xfff7d794).withOpacity(0.3),
-                            ),
-                            eventShow(bgColr: Color(0xff19a2a0), fgColr: Color(0xff19a2a0).withOpacity(0.3))
-                          ],
-                        )),
-                    Center(child: Text('No upcoming Events')),
-                    Center(child: Text('No Upcoming Exams'))
+                      width: 80,
+                      //color: Colors.yellow,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 2,
+                            backgroundColor: Color(0xfffed330),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Events',
+                            style: eventTextStyle(),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 80,
+                      //color: Colors.pink,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 2,
+                            backgroundColor: Color(0xff5fd2d0),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Exams',
+                            style: eventTextStyle(),
+                          )
+                        ],
+                      ),
+                    ),
+                    Container(
+                      width: 80,
+                      // color: Colors.purple,
+                      child: Row(
+                        children: [
+                          CircleAvatar(
+                            radius: 2,
+                            backgroundColor: Color(0xfffc5c65),
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Text(
+                            'Absent',
+                            style: eventTextStyle(),
+                          )
+                        ],
+                      ),
+                    )
                   ],
                 ),
-              )
-            ],
-          ),
+              ),
+            ),
+            indicatorOfCalendar(),
+            SizedBox(
+              height: 2,
+            ),
+            Container(
+              width: 1.sw,
+              //width: double.infinity,
+              decoration: BoxDecoration(color: Colors.white),
+              height: 30,
+              child: TabBar(
+                controller: _tabController,
+                isScrollable: true,
+                labelColor: Color(0xff34378b),
+                labelStyle: TextStyle(
+                    fontSize: 12.sp,
+                    fontWeight: FontWeight.w400,
+                    fontFamily: 'Axiforma'),
+                // indicator: BoxDecoration(
+                //     borderRadius: BorderRadius.circular(8),
+                //     color: Colors.white),
+                indicatorColor: Color(0xff34378b),
+                // indicatorSize: TabBarIndicatorSize.tab,
+                unselectedLabelColor: Color(0xFF414D55).withOpacity(0.36),
+                tabs: [
+                  Tab(
+                    text: 'Today',
+                  ),
+                  Tab(
+                    text: 'Upcoming Events',
+                  ),
+                  Tab(
+                    text: 'Upcoming Exams',
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              width: 1.sw,
+              height: 200,
+              child: TabBarView(
+                controller: _tabController,
+                children: [
+                  Container(
+                      width: 1.sw,
+                      child: ListView(
+                        children: [
+                          eventShow(
+                            bgColr: Color(0xfff7d794),
+                            fgColr: Color(0xfff7d794).withOpacity(0.3),
+                          ),
+                          eventShow(
+                              bgColr: Color(0xff19a2a0),
+                              fgColr: Color(0xff19a2a0).withOpacity(0.3))
+                        ],
+                      )),
+                  Center(child: Text('No upcoming Events')),
+                  Center(child: Text('No Upcoming Exams'))
+                ],
+              ),
+            )
+          ],
         ),
-
+      ),
     );
   }
 
   Widget indicatorOfCalendar() => Padding(
-    padding: const EdgeInsets.all(4.0),
-    child: Container(
+        padding: const EdgeInsets.all(4.0),
+        child: Container(
           width: 1.sw,
           height: 100,
           padding: EdgeInsets.all(8),
@@ -287,16 +288,21 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                 bottomLeft: Radius.circular(15),
                 bottomRight: Radius.circular(15),
               ),
-              boxShadow: [BoxShadow(color: Colors.black54, blurRadius: 2)]),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black12,
+                  blurRadius: 1,
+                ),
+              ]),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Container(
                 //width: 100,
-                width: 1.sw/3-35,
+                width: 1.sw / 3 - 35,
                 height: 80,
                 //color: Colors.red,
-               // padding: EdgeInsets.symmetric(horizontal: 10),
+                // padding: EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
                     Container(
@@ -335,7 +341,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                 ),
               ),
               Container(
-                width: 1.sw/3-35,
+                width: 1.sw / 3 - 35,
                 //width: 100,
                 height: 80,
                 //padding: EdgeInsets.symmetric(horizontal: 10),
@@ -378,8 +384,8 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
                 ),
               ),
               Container(
-                width: 1.sw/3-35,
-               // width: 100,
+                width: 1.sw / 3 - 35,
+                // width: 100,
                 height: 80,
                 //padding: EdgeInsets.symmetric(horizontal: 10),
                 // color: Colors.purple,
@@ -423,7 +429,7 @@ class _CalendarMainScreenState extends State<CalendarMainScreen>
             ],
           ),
         ),
-  );
+      );
   eventTextStyle() => TextStyle(
         fontFamily: 'Axiforma',
         color: Color(0xff6e6e6e),

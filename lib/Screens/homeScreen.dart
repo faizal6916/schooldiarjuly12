@@ -100,6 +100,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       //extendBodyBehindAppBar: true,
       // extendBody: true,
+
       backgroundColor: Colors.grey.shade200,
       key: _key,
       // appBar: CustomAppBar(
