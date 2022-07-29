@@ -25,6 +25,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  void demo(){
+    print('hello');
+  }
+
+
   List<Map<String, Object>> _pages = [
     {
       'page': ProfileScreen(),
@@ -94,6 +99,11 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void _errorshowSnackBar({required String errText,required Color bgclr}){
+    _key.currentState!.showSnackBar(SnackBar(content: Text(errText),backgroundColor: bgclr,margin: EdgeInsets.all(8),
+      behavior: SnackBarBehavior.floating,),);
+  }
+  //void _validateReset({String current})
   GlobalKey<ScaffoldState> _key = GlobalKey();
   @override
   Widget build(BuildContext context) {

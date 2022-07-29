@@ -12,21 +12,66 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final _formKey = GlobalKey<FormState>();
+  GlobalKey<ScaffoldState> _key = GlobalKey();
+  TextEditingController _username = TextEditingController();
+  TextEditingController _password = TextEditingController();
+  static final validEmail = RegExp(r'^([a-zA-Z0-9]+@[a-z]+\.[a-z]{2,10})');
+
+  void _validateForm() {
+    var userText = _username.value;
+    var passwordText = _password.value;
+    if (userText == null || userText.text.isEmpty) {
+      _showSnackBar('Please Enter an email id', Colors.red);
+    } else if (!validEmail.hasMatch(userText.text)) {
+      // print(validEmail.allMatches(userText.text));
+      // print(userText.text);
+      // print(validEmail.hasMatch(userText.text));
+      _showSnackBar('Please Enter a valid email id', Colors.red);
+    } else if (passwordText == null || passwordText.text.isEmpty) {
+      _showSnackBar('Please Enter the password', Colors.red);
+      // print('validation success');
+    } else {
+      print('validation success');
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => HomeScreen()));
+    }
+  }
+
+  void _showSnackBar(String errorText, Color bgClr) {
+    _key.currentState!.showSnackBar(SnackBar(
+      content: Text(errorText),
+      backgroundColor: bgClr,
+      margin: EdgeInsets.all(8),
+      behavior: SnackBarBehavior.floating,
+    ));
+  }
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    _username.clear();
+    _password.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _key,
       backgroundColor: Color(0xff831EE5),
       body: SingleChildScrollView(
         child: Stack(
           children: [
-
             Positioned(
-                top: 0,
-                child: Lottie.asset('assets/animation/Login.json')),
+                top: 0, child: Lottie.asset('assets/animation/Login.json')),
             Positioned(
                 top: 0.125.sh,
                 left: 0.55.sw,
-                child: Image(image: AssetImage('assets/images/logo.png'),width: 150,height: 100,)),
+                child: Image(
+                  image: AssetImage('assets/images/logo.png'),
+                  width: 150,
+                  height: 100,
+                )),
             // Positioned(
             //     top: 0,
             //     child: Lottie.asset('assets/animation/Login.json')),
@@ -36,167 +81,236 @@ class _LoginScreenState extends State<LoginScreen> {
               height: 0.7.sh,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(25), topLeft: Radius.circular(25)),
+                      topRight: Radius.circular(25),
+                      topLeft: Radius.circular(25)),
                   color: Colors.white),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 0.03.sh,
-                  ),
-                  Text(
-                    'Please login with registered email id',
-                    style: TextStyle(fontSize: 12.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400),
-                  ),
-                  SizedBox(
-                    height: 0.02.sh,
-                  ),
-                  Container(
-                    width: 278,
-                    height: 50,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: Color(0xff518EF8))),
-                    child: Row(
+              child: Form(
+                key: _formKey,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 0.03.sh,
+                    ),
+                    Text(
+                      'Please login with registered email id',
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          fontFamily: 'Axiforma',
+                          color: Color(0xff8A8CBD),
+                          fontWeight: FontWeight.w400),
+                    ),
+                    SizedBox(
+                      height: 0.02.sh,
+                    ),
+                    Container(
+                      width: 278,
+                      height: 50,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          border: Border.all(color: Color(0xff518EF8))),
+                      child: Row(
+                        children: [
+                          SizedBox(
+                            width: 0.2.sw,
+                          ),
+                          Image(
+                              image:
+                                  AssetImage('assets/images/Googleicon.png')),
+                          SizedBox(
+                            width: 0.05.sw,
+                          ),
+                          Text(
+                            'Google',
+                            style: TextStyle(
+                                fontFamily: 'Axiforma',
+                                color: Color(0xff007AB9),
+                                fontWeight: FontWeight.w500,
+                                fontSize: 22.0871.sp),
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.02.sh,
+                    ),
+                    Text(
+                      'or',
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          fontFamily: 'Axiforma',
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff8A8CBD)),
+                    ),
+                    SizedBox(
+                      height: 0.005.sh,
+                    ),
+                    SizedBox(
+                      height: 0.1.sh,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 50, right: 50),
+                        child: TextField(
+                          controller: _username,
+                          decoration: InputDecoration(
+                            icon: Icon(
+                              Icons.people,
+                              color: Color(0xffD2C2FF),
+                            ),
+                            helperText: ' ',
+                            labelText: 'Email or Mobile Number',
+                            labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Color(0xFFD2C2FF)),
+                            ),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Color(0xFF7D22E1)),
+                            ),
+                          ),
+                          style: TextStyle(
+                              fontFamily: 'Axiforma',
+                              fontWeight: FontWeight.w400,
+                              fontSize: 12.sp),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 0.0005.sh,
+                    ),
+                    SizedBox(
+                      height: 0.1.sh,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 50, right: 50),
+                        child: TextField(
+                            controller: _password,
+                            decoration: InputDecoration(
+                              icon: Icon(
+                                Icons.lock_open_outlined,
+                                color: Color(0xffD2C2FF),
+                              ),
+                              suffixIcon: Icon(
+                                Icons.remove_red_eye_outlined,
+                                color: Color(0xffD2C2FF),
+                              ),
+                              helperText: ' ',
+                              labelText: 'Password',
+                              labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
+                              focusedBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Color(0xFFD2C2FF)),
+                              ),
+                              enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: Color(0xFF7D22E1)),
+                              ),
+                            ),
+                            style: TextStyle(
+                                fontFamily: 'Axiforma',
+                                fontWeight: FontWeight.w400,
+                                fontSize: 12.sp)),
+                      ),
+                    ),
+                    Row(
                       children: [
                         SizedBox(
-                          width: 0.2.sw,
+                          width: 0.13.sw,
                         ),
-                        Image(image: AssetImage('assets/images/Googleicon.png')),
+                        Icon(Icons.lock_open, color: Color(0xff8A8CBD)),
                         SizedBox(
-                          width: 0.05.sw,
+                          width: 0.02.sw,
                         ),
-                        Text('Google',style: TextStyle(fontFamily: 'Axiforma',color: Color(0xff007AB9),fontWeight: FontWeight.w500,fontSize: 22.0871.sp),)
+                        Text(
+                          'Forgot Password',
+                          style: TextStyle(
+                              fontSize: 10.sp,
+                              color: Color(0xff8A8CBD),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'Montserrat'),
+                        ),
+                        SizedBox(
+                          width: 0.22.sw,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            // Navigator.push(
+                            //     context,
+                            //     MaterialPageRoute(
+                            //         builder: (context) => HomeScreen()));
+                            _validateForm();
+                          },
+                          child: Text(
+                            'LOGIN',
+                            style: TextStyle(
+                                fontSize: 16.sp,
+                                fontFamily: 'Montserrat',
+                                fontWeight: FontWeight.w400),
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              primary: Color(0xff25DBDB),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(6))),
+                        )
                       ],
                     ),
-                  ),
-                  SizedBox(
-                    height: 0.02.sh,
-                  ),
-                  Text('or',style: TextStyle(fontSize: 12.sp,fontFamily: 'Axiforma',fontWeight: FontWeight.w400,color: Color(0xff8A8CBD)),),
-                  SizedBox(
-                    height: 0.005.sh,
-                  ),
-                  SizedBox(
-                    height: 0.1.sh,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          icon: Icon(
-                            Icons.people,
-                            color: Color(0xffD2C2FF),
-                          ),
-                          helperText: ' ',
-                          labelText: 'Email or Mobile Number',
-                          labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFD2C2FF)),
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFF7D22E1)),
-                          ),
-                        ),
-                        style: TextStyle(fontFamily: 'Axiforma',fontWeight: FontWeight.w400,fontSize: 12.sp),
-                      ),
+                    SizedBox(
+                      height: 0.06.sh,
                     ),
-                  ),
-                  SizedBox(
-                    height: 0.0005.sh,
-                  ),
-                  SizedBox(
-                    height: 0.1.sh,
-                    child: Padding(
-                      padding: const EdgeInsets.only(left: 50, right: 50),
-                      child: TextField(
-                        decoration: InputDecoration(
-                          icon: Icon(
-                            Icons.lock_open_outlined,
-                            color: Color(0xffD2C2FF),
-                          ),
-                          suffixIcon: Icon(
-                            Icons.remove_red_eye_outlined,
-                            color: Color(0xffD2C2FF),
-                          ),
-                          helperText: ' ',
-                          labelText: 'Password',
-                          labelStyle: TextStyle(color: Color(0xFFD2C2FF)),
-                          focusedBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFFD2C2FF)),
-                          ),
-                          enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Color(0xFF7D22E1)),
-                          ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 0.16.sw,
                         ),
-                          style: TextStyle(fontFamily: 'Axiforma',fontWeight: FontWeight.w400,fontSize: 12.sp)
-                      ),
+                        Image(
+                          image: AssetImage('assets/images/Benchmarklogo.png'),
+                          height: 0.045.sh,
+                        ),
+                        SizedBox(
+                          width: 0.04.sw,
+                        ),
+                        Image(
+                          image: AssetImage('assets/images/GooglePic.png'),
+                          height: 0.045.sh,
+                        ),
+                      ],
                     ),
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 0.13.sw,
-                      ),
-                      Icon(Icons.lock_open, color: Color(0xff8A8CBD)),
-                      SizedBox(
-                        width: 0.02.sw,
-                      ),
-                      Text(
-                        'Forgot Password',
-                        style: TextStyle(fontSize: 10.sp, color: Color(0xff8A8CBD),fontWeight: FontWeight.w400,fontFamily: 'Montserrat'),
-                      ),
-                      SizedBox(
-                        width: 0.22.sw,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
-                        },
-                        child: Text(
-                          'LOGIN',
-                          style: TextStyle(fontSize: 16.sp,fontFamily: 'Montserrat',fontWeight: FontWeight.w400),
+                    SizedBox(
+                      height: 0.04.sh,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 0.085.sh,
                         ),
-                        style: ElevatedButton.styleFrom(
-                            primary: Color(0xff25DBDB),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(6))),
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    height: 0.06.sh,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 0.16.sw,
-                      ),
-                      Image(image:AssetImage('assets/images/Benchmarklogo.png'),height: 0.045.sh,),
-                      SizedBox(
-                        width: 0.04.sw,
-                      ),
-                      Image(image:AssetImage('assets/images/GooglePic.png'),height: 0.045.sh,),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 0.04.sh,
-                  ),
-                  Row(
-                    children: [
-                      SizedBox(
-                        width: 0.085.sh,
-                      ),
-                      Text('Need any help?',style: TextStyle(fontSize: 8.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400),),
-                      SizedBox(
-                        width: 0.01.sh,
-                      ),
-                      Text('Contact:',style: TextStyle(fontSize: 8.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400)),
-                      SizedBox(
-                        width: 0.004.sh,
-                      ),
-                      Text('support@team-sqa.com',style: TextStyle(fontSize: 9.sp,fontFamily: 'Axiforma',color: Color(0xff8A8CBD),fontWeight: FontWeight.w400,decoration: TextDecoration.underline,))
-                    ],
-                  ),
-                ],
+                        Text(
+                          'Need any help?',
+                          style: TextStyle(
+                              fontSize: 8.sp,
+                              fontFamily: 'Axiforma',
+                              color: Color(0xff8A8CBD),
+                              fontWeight: FontWeight.w400),
+                        ),
+                        SizedBox(
+                          width: 0.01.sh,
+                        ),
+                        Text('Contact:',
+                            style: TextStyle(
+                                fontSize: 8.sp,
+                                fontFamily: 'Axiforma',
+                                color: Color(0xff8A8CBD),
+                                fontWeight: FontWeight.w400)),
+                        SizedBox(
+                          width: 0.004.sh,
+                        ),
+                        Text('support@team-sqa.com',
+                            style: TextStyle(
+                              fontSize: 9.sp,
+                              fontFamily: 'Axiforma',
+                              color: Color(0xff8A8CBD),
+                              fontWeight: FontWeight.w400,
+                              decoration: TextDecoration.underline,
+                            ))
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ],
